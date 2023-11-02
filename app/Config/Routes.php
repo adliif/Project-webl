@@ -8,4 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->get('/home', 'Home::home');
+
 $routes->get('/login', 'Home::login');
+$routes->get('/signIn', 'Home::signIn');
+$routes->get('/signUp', 'Home::signUp');
