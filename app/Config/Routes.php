@@ -14,6 +14,14 @@ $routes->get('/owner/index', 'Owner::index', ['filter' => 'role:owner']);
 
 $routes->get('/staf', 'Staf::index', ['filter' => 'role:staf']);
 $routes->get('/staf/index', 'Staf::index', ['filter' => 'role:staf']);
+$routes->get('/ownerpemesanan', 'Staf::viewPemesanan');
+$routes->get('/ownertransaksi', 'Staf::transaksiOwner');
+$routes->get('/ownerstaf', 'Staf::viewStaf');
+$routes->get('/ownerstafedit', 'Staf::editStaf');
+$routes->get('/ownerstaftambah', 'Staf::tambahStaf');
+$routes->get('/staf/view', 'Staf::viewHome');
+$routes->get('/pemesanan', 'Staf::pemesanan');
+$routes->get('/transaksi', 'Staf::transaksiStaf');
 
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');

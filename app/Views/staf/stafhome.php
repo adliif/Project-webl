@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Staf Only</title>
+    <title>Hotel reservation - Real Estate</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -77,10 +77,9 @@ https://templatemo.com/tm-591-villa-agency
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="<?= base_url('home') ?>">Home</a></li>
-                      <li><a href="<?= base_url('ownerpemesanan') ?>">Pemesanan</a></li>
-                      <li><a href="<?= base_url('ownertransaksi') ?>">Transaksi</a></li>
-                      <li><a href="<?= base_url('ownerstaf') ?>">Staf</a></li>
+                      <li><a href="<?= base_url('staf') ?>">Home</a></li>
+                      <li><a href="<?= base_url('pemesanan') ?>">Pemesanan</a></li>
+                      <li><a href="<?= base_url('transaksi') ?>">Transaksi</a></li>
                       <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
                   </ul>   
                     <a class='menu-trigger'>
@@ -99,7 +98,7 @@ https://templatemo.com/tm-591-villa-agency
       <div class="item item-1">
         <div class="header-text">
           <span class="category">Lampung, <em>Indonesia</em></span>
-          <h2>Hurry!<br>Get the Best Hotel in Lampung</h2>
+          <h2>Hello, <br>Welcome Rivaldo</h2>
         </div>
       </div>
       <div class="item item-2">
@@ -195,42 +194,6 @@ https://templatemo.com/tm-591-villa-agency
   </div>
 
     </br>
-  <div class="container">
-                </br>
-  <div class="page-heading header-text">
-  <h3>   Daftar Pemasukan </h3>
-                </div>
-  </br>
-<table class="table" border="1" id="table" 
-     data-toggle="table"
-     data-search="true"
-     data-filter-control="true" 
-     data-show-export="true"
-     data-click-to-select="true"
-     data-toolbar="#toolbar">
-	<thead>
-		<tr>
-			<th data-field="prenom" data-filter-control="input" data-sortable="true">Bulan</th>
-			<th data-field="date" data-filter-control="select" data-sortable="true">Total Pemesanan</th>
-			<th data-field="examen" data-filter-control="select" data-sortable="true">Pemasukan</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Agustus</td>
-			<td>90</td>
-			<td>50000000</td>
-		</tr>
-    <tr>
-			<td>September</td>
-			<td>86</td>
-			<td>45000000</td>
-		</tr>
-
-</tbody>
-</table>
-</div>
-
 
   <div class="contact section">
     <div class="container">
