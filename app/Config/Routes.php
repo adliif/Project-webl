@@ -7,14 +7,20 @@ use Config\Auth;
  * @var RouteCollection $routes
  */
 
+// Routes User
 $routes->get('/user', 'User::index');
+$routes->get('/contact', 'User::contact');
+$routes->get('/reservasi', 'User::reservasi');
+$routes->get('/transaction', 'User::transaction');
 
+// Routes owner
 $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
 $routes->get('/owner/index', 'Owner::index', ['filter' => 'role:owner']);
 
-$routes->get('/staf', 'Staf::index', ['filter' => 'role:staf']);
-$routes->get('/staf/index', 'Staf::index', ['filter' => 'role:staf']);
+// Routes staf
 
+
+// Intro
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->get('/register', 'Home::register');
