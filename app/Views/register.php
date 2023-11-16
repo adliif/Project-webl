@@ -36,48 +36,51 @@
                         <div class="row justify-content-center" style="margin-top: 10px;">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Sign Up</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4"><?=lang('Auth.register')?></h3></div>
                                     <div class="card-body">
-                                        <form action="register_exe.php" method="post">
+                                        
+                                        <?= view('Myth\Auth\Views\_message_block') ?>
+
+                                        <form action="<?= url_to('register') ?>" method="post">
+                                            <?= csrf_field() ?>
+
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="email" type="email" placeholder="Input your email" required />
+                                                <input class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" type="email" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>"  />
                                                 <label for="inputEmail">Email</label>
+                                                <small id="emailHelp" class="form-text text-muted"><?=lang('Auth.weNeverShare')?></small>
                                             </div>
+
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="username" type="text" placeholder="Input your name" required />
-                                                <label for="inputEmail">Username</label>
+                                                <input class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" type="text" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>" />
+                                                <label for="inputName">Username</label>
                                             </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" name="alamat" type="text" placeholder="Input your alamat" required />
-                                                <label for="inputEmail">Alamat</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" name="noHandphone" type="text" value="(+62) " required />
-                                                <label for="inputEmail">No Handphone</label>
-                                            </div>
+
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" name="pass" type="password" placeholder="Create a password" required />
+                                                        <input class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" name="password" type="password" placeholder="<?=lang('Auth.password')?>" autocomplete="off" />
                                                         <label for="inputPassword">Password</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" required />
+                                                        <input class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" name="pass_confirm" type="password" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off" />
                                                         <label for="inputPasswordConfirm">Confirm Password</label>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid">
-                                                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                                                    <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.register')?></button>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
+                   
+
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="<?=base_url('/login')?>">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="<?=base_url('/')?>">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>

@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class Staf extends BaseController
+class Owner extends BaseController
 {
     public function index()
     {
         $data =[
-            'title' => 'Tampilan staf',
+            'title' => 'Tampilan owner',
         ];
-        return view('/staf/index', $data);
+        return view('/owner/index', $data);
     }
 }
