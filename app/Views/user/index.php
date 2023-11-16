@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency - Real Estate HTML5 Template</title>
+    <title>User</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -60,21 +60,27 @@ https://templatemo.com/tm-591-villa-agency
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <h1>Villa</h1>
+                    <a href="" class="logo">
+                        <h1>VARILITEL</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html" class="active">Home</a></li>
-                      <li><a href="properties.html">Properties</a></li>
-                      <li><a href="property-details.html">Property Details</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                      <li><a href="<?=base_url('/user')?>" class="active">Home</a></li>
+                      <li><a href="<?=base_url('/reservasi')?>">Reservasi</a></li>
+                      <li><a href="<?=base_url('/contact')?>">Contact Us</a></li>
+                      <li><a href="<?=base_url('/transaction')?>"><i class="fa fa-calendar"></i> Transaction</a></li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -122,41 +128,29 @@ https://templatemo.com/tm-591-villa-agency
         <div class="col-lg-5">
           <div class="section-heading">
             <h6>| Featured</h6>
-            <h2>Best Appartment &amp; Sea view</h2>
+            <h2>the best room of the year</h2>
           </div>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Best useful links ?
+                  Assessment based on what ?
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap for your business. TemplateMo provides you the <a href="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</a> in the world. Please tell your friends about it.</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  How does this work ?
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
+                  The assessment is based on surveys and input provided by customers who have used this room </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Why is Villa Agency the best ?
+                  What advantages are provided ?
                 </button>
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  This junior suite type room has many plus points, including the room's furnishings being very simple and following the French housing style. Apart from that, this room has good lighting so you will feel comfortable and leave a good impression in this room.
                 </div>
               </div>
             </div>
@@ -186,47 +180,13 @@ https://templatemo.com/tm-591-villa-agency
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="video section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 offset-lg-4">
-          <div class="section-heading text-center">
-            <h6>| Video View</h6>
-            <h2>Get Closer View & Different Feeling</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="video-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <div class="video-frame">
-            <img src="assets/images/video-frame.jpg" alt="">
-            <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="fun-facts">
+    <div class="fun-facts">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="wrapper">
             <div class="row">
-              <div class="col-lg-4">
-                <div class="counter">
-                  <h2 class="timer count-title count-number" data-to="34" data-speed="1000"></h2>
-                   <p class="count-text ">Buildings<br>Finished Now</p>
-                </div>
-              </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4" style="margin-left: 17%;">
                 <div class="counter">
                   <h2 class="timer count-title count-number" data-to="12" data-speed="1000"></h2>
                   <p class="count-text ">Years<br>Experience</p>
@@ -244,6 +204,7 @@ https://templatemo.com/tm-591-villa-agency
       </div>
     </div>
   </div>
+  </div>
 
   <div class="section best-deal">
     <div class="container">
@@ -260,13 +221,13 @@ https://templatemo.com/tm-591-villa-agency
               <div class="nav-wrapper ">
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab" data-bs-target="#appartment" type="button" role="tab" aria-controls="appartment" aria-selected="true">Appartment</button>
+                    <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab" data-bs-target="#appartment" type="button" role="tab" aria-controls="appartment" aria-selected="true">Family Room</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="villa-tab" data-bs-toggle="tab" data-bs-target="#villa" type="button" role="tab" aria-controls="villa" aria-selected="false">Villa House</button>
+                    <button class="nav-link" id="villa-tab" data-bs-toggle="tab" data-bs-target="#villa" type="button" role="tab" aria-controls="villa" aria-selected="false">Junior Suite Room</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab" data-bs-target="#penthouse" type="button" role="tab" aria-controls="penthouse" aria-selected="false">Penthouse</button>
+                    <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab" data-bs-target="#penthouse" type="button" role="tab" aria-controls="penthouse" aria-selected="false">Suite Room</button>
                   </li>
                 </ul>
               </div>              
@@ -355,130 +316,7 @@ https://templatemo.com/tm-591-villa-agency
     </div>
   </div>
 
-  <div class="properties section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 offset-lg-4">
-          <div class="section-heading text-center">
-            <h6>| Properties</h6>
-            <h2>We Provide The Best Property You Like</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-01.jpg" alt=""></a>
-            <span class="category">Luxury Villa</span>
-            <h6>$2.264.000</h6>
-            <h4><a href="property-details.html">18 New Street Miami, OR 97219</a></h4>
-            <ul>
-              <li>Bedrooms: <span>8</span></li>
-              <li>Bathrooms: <span>8</span></li>
-              <li>Area: <span>545m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>6 spots</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-02.jpg" alt=""></a>
-            <span class="category">Luxury Villa</span>
-            <h6>$1.180.000</h6>
-            <h4><a href="property-details.html">54 Mid Street Florida, OR 27001</a></h4>
-            <ul>
-              <li>Bedrooms: <span>6</span></li>
-              <li>Bathrooms: <span>5</span></li>
-              <li>Area: <span>450m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>8 spots</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-03.jpg" alt=""></a>
-            <span class="category">Luxury Villa</span>
-            <h6>$1.460.000</h6>
-            <h4><a href="property-details.html">26 Old Street Miami, OR 38540</a></h4>
-            <ul>
-              <li>Bedrooms: <span>5</span></li>
-              <li>Bathrooms: <span>4</span></li>
-              <li>Area: <span>225m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>10 spots</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-04.jpg" alt=""></a>
-            <span class="category">Apartment</span>
-            <h6>$584.500</h6>
-            <h4><a href="property-details.html">12 New Street Miami, OR 12650</a></h4>
-            <ul>
-              <li>Bedrooms: <span>4</span></li>
-              <li>Bathrooms: <span>3</span></li>
-              <li>Area: <span>125m2</span></li>
-              <li>Floor: <span>25th</span></li>
-              <li>Parking: <span>2 cars</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-05.jpg" alt=""></a>
-            <span class="category">Penthouse</span>
-            <h6>$925.600</h6>
-            <h4><a href="property-details.html">34 Beach Street Miami, OR 42680</a></h4>
-            <ul>
-              <li>Bedrooms: <span>4</span></li>
-              <li>Bathrooms: <span>4</span></li>
-              <li>Area: <span>180m2</span></li>
-              <li>Floor: <span>38th</span></li>
-              <li>Parking: <span>2 cars</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-06.jpg" alt=""></a>
-            <span class="category">Modern Condo</span>
-            <h6>$450.000</h6>
-            <h4><a href="property-details.html">22 New Street Portland, OR 16540</a></h4>
-            <ul>
-              <li>Bedrooms: <span>3</span></li>
-              <li>Bathrooms: <span>2</span></li>
-              <li>Area: <span>165m2</span></li>
-              <li>Floor: <span>26th</span></li>
-              <li>Parking: <span>3 cars</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="contact section">
+    <div class="contact section">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 offset-lg-4">

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency - Real Estate HTML5 Template</title>
+    <title>Owner</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -60,6 +60,13 @@ https://templatemo.com/tm-591-villa-agency
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
@@ -73,7 +80,6 @@ https://templatemo.com/tm-591-villa-agency
                       <li><a href="index.html" class="active">Home</a></li>
                       <li><a href="properties.html">Properties</a></li>
                       <li><a href="property-details.html">Property Details</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
                       <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
                   </ul>   
                     <a class='menu-trigger'>

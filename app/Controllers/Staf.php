@@ -10,14 +10,4 @@ class Staf extends BaseController
     {
         return view('stafhome');
     }
-
-    public function pemesanan()
-    {
-        return view('stafpemesanan');
-    }
-
-    public function transaksi()
-    {
-        return view('staftransaksi');
-    }
 }
