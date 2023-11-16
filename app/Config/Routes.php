@@ -13,7 +13,6 @@ $routes->get('/contact', 'User::contact');
 $routes->get('/reservasi', 'User::reservasi');
 $routes->get('/transaction', 'User::transaction');
 
-// Routes owner
 $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
 // $routes->get('/owner/index', 'Owner::index', ['filter' => 'role:owner']);
 $routes->get('/pemesanan', 'Owner::pemesanan', ['filter' => 'role:owner']);
