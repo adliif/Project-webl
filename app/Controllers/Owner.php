@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\PemesananModel;
 
 class Owner extends BaseController
 {
@@ -13,4 +14,43 @@ class Owner extends BaseController
         ];
         return view('/owner/index', $data);
     }
+    public function pemesanan()
+    {   
+        $model = new PemesananModel();
+        $data = [
+            'title' => 'Tampilan owner',
+            'reservations' => $model->findAll(), // Ambil data pemesanan
+        ];
+        return view('/owner/pemesanan', $data);
+    }
+    public function transaksi()
+    {
+        $data =[
+            'title' => 'Tampilan transaksi',
+        ];
+        return view('/owner/transaksi', $data);
+    }
+    public function staf()
+    {
+        $data =[
+            'title' => 'Tampilan staf',
+        ];
+        return view('/owner/staf', $data);
+    }
+
+    public function edit()
+    {
+        $data =[
+            'title' => 'Tampilan staf',
+        ];
+        return view('/owner/stafedit');
+    }
+    public function tambah()
+    {
+        $data =[
+            'title' => 'Tampilan staf',
+        ];
+        return view('/owner/staftambah');
+    }
+
 }

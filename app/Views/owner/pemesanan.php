@@ -77,9 +77,10 @@ https://templatemo.com/tm-591-villa-agency
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                    <li><a href="<?= base_url('staf') ?>">Home</a></li>
+                      <li><a href="<?= base_url('owner') ?>">Home</a></li>
                       <li><a href="<?= base_url('pemesanan') ?>">Pemesanan</a></li>
                       <li><a href="<?= base_url('transaksi') ?>">Transaksi</a></li>
+                      <li><a href="<?= base_url('staf') ?>">Staf</a></li>
                       <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
                   </ul>   
                     <a class='menu-trigger'>
@@ -116,7 +117,7 @@ https://templatemo.com/tm-591-villa-agency
      data-toolbar="#toolbar">
 	<thead>
 		<tr>
-			<th data-field="prenom" data-filter-control="input" data-sortable="true">Nama</th>
+			<th data-field="prenom" data-filter-control="input" data-sortable="true">Id</th>
 			<th data-field="date" data-filter-control="select" data-sortable="true">Tanggal Pemesanan</th>
 			<th data-field="examen" data-filter-control="select" data-sortable="true">Tanggal Masuk</th>
 			<th data-field="note" data-sortable="true">Tanggal Keluar</th>
@@ -124,24 +125,19 @@ https://templatemo.com/tm-591-villa-agency
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>Valérie</td>
-			<td>01/09/2015</td>
-			<td>Français</td>
-			<td>12/20</td>
-      <td>200000</td>
-		</tr>
-		<tr>
-			<td>Eric</td>
-			<td>05/09/2015</td>
-			<td>Philosophie</td>
-			<td>8/20</td>
-		</tr>
+  <?php foreach ($reservations as $reservation) : ?>
+            <tr>
+                <td><?= $reservation['id']; ?></td>
+                <td><?= $reservation['tanggal_pemesanan']; ?></td>
+                <td><?= $reservation['tanggal_masuk']; ?></td>
+                <td><?= $reservation['tanggal_keluar']; ?></td>
+                <td><?= $reservation['harga']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+		
 	</tbody>
 </table>
 </div>
-
-</br>
 
   <footer class="footer-no-gap">
     <div class="container">

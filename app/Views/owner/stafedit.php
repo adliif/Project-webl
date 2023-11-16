@@ -72,16 +72,17 @@ https://templatemo.com/tm-591-villa-agency
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <h1>Transaksi</h1>
+                        <h1>Staf</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                    <li><a href="<?= base_url('staf') ?>">Home</a></li>
+                      <li><a href="<?= base_url('owner') ?>">Home</a></li>
                       <li><a href="<?= base_url('pemesanan') ?>">Pemesanan</a></li>
                       <li><a href="<?= base_url('transaksi') ?>">Transaksi</a></li>
+                      <li><a href="<?= base_url('staf') ?>">Staf</a></li>
                       <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                  </ul>   
+                  </ul>    
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -97,55 +98,43 @@ https://templatemo.com/tm-591-villa-agency
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <span class="breadcrumb"><a href="#">Home</a>  /  Transaksi</span>
-          <h3>Single Property</h3>
+          <span class="breadcrumb"><a href="#">Home</a>  /  Staf</span>
+          <h3>Hotel Staf</h3>
         </div>
       </div>
     </div>
   </div>
 </br>
   <div class="container">
-  <p> Daftar Transaksi Hotel </p>
-  </br>
-<table class="table" border="1" id="table" 
-     data-toggle="table"
-     data-search="true"
-     data-filter-control="true" 
-     data-show-export="true"
-     data-click-to-select="true"
-     data-toolbar="#toolbar">
-	<thead>
-		<tr>
-    <th data-field="state" data-checkbox="true">Status</th>
-			<th data-field="prenom" data-filter-control="input" data-sortable="true">Nama</th>
-			<th data-field="date" data-filter-control="select" data-sortable="true">Tanggal Pemesanan</th>
-			<th data-field="examen" data-filter-control="select" data-sortable="true">Total</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-    <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-			<td>Valérie</td>
-			<td>01/09/2015</td>
-			<td>Français</td>
-		</tr>
-		<tr>
-    <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-			<td>Eric</td>
-			<td>05/09/2015</td>
-		</tr>
-		<tr>
-    <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-			<td>Valentin</td>
-			<td>05/09/2015</td>
-		</tr>
-	</tbody>
-</table>
-<a type="button" class="btn btn-primary" >Simpan</a>
-</div>
+  
+  <form action="" class="form-horizontal pad-bg">
+        <h1 class="text-center">Edit Staf</h1>
+        </br>
+        <div class="form-group">
+          <label for="" class="control-label col-sm-3">Nama</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control input-lg" />
+          </div>  
+        </div>
+        </br>
+        <div class="form-group">
+          <label for="" class="control-label col-sm-3">Alamat</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control input-lg" />
+          </div>  
+        </div>
+        </br>
+        <div class="form-group">
+          <label for="" class="control-label col-sm-3">No HP</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control input-lg" />
+          </div>
+      </form>
 </br>
+<a class="btn btn-primary" href="<?= base_url('ownerstaf') ?>">Edit</a>
+</div>
 
-  <footer class="footer-no-gap">
+  <footer>
     <div class="container">
       <div class="col-lg-12">
         <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
