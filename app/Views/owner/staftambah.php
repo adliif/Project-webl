@@ -77,12 +77,12 @@ https://templatemo.com/tm-591-villa-agency
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                    <li><a href="<?= base_url('home') ?>">Home</a></li>
-                      <li><a href="<?= base_url('ownerpemesanan') ?>">Pemesanan</a></li>
-                      <li><a href="<?= base_url('ownertransaksi') ?>">Transaksi</a></li>
-                      <li><a href="<?= base_url('ownerstaf') ?>">Staf</a></li>
+                      <li><a href="<?= base_url('owner') ?>">Home</a></li>
+                      <li><a href="<?= base_url('pemesanan') ?>">Pemesanan</a></li>
+                      <li><a href="<?= base_url('transaksi') ?>">Transaksi</a></li>
+                      <li><a href="<?= base_url('staf') ?>">Staf</a></li>
                       <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                  </ul>   
+                  </ul>    
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>

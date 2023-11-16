@@ -8,6 +8,7 @@ class Staf extends BaseController
 {
     public function index()
     {
+
         $data =[
             'title' => 'Tampilan staf',
         ];

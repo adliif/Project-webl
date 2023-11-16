@@ -15,7 +15,12 @@ $routes->get('/transaction', 'User::transaction');
 
 // Routes owner
 $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
-$routes->get('/owner/index', 'Owner::index', ['filter' => 'role:owner']);
+// $routes->get('/owner/index', 'Owner::index', ['filter' => 'role:owner']);
+$routes->get('/pemesanan', 'Owner::pemesanan', ['filter' => 'role:owner']);
+$routes->get('/transaksi', 'Owner::transaksi', ['filter' => 'role:owner']);
+$routes->get('/staf', 'Owner::staf', ['filter' => 'role:owner']);
+$routes->get('/stafedit', 'Owner::edit', ['filter' => 'role:owner']);
+$routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
 
 // Routes staf
 

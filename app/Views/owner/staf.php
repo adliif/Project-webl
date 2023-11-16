@@ -77,12 +77,12 @@ https://templatemo.com/tm-591-villa-agency
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                    <li><a href="<?= base_url('home') ?>">Home</a></li>
-                      <li><a href="<?= base_url('ownerpemesanan') ?>">Pemesanan</a></li>
-                      <li><a href="<?= base_url('ownertransaksi') ?>">Transaksi</a></li>
-                      <li><a href="<?= base_url('ownerstaf') ?>">Staf</a></li>
+                      <li><a href="<?= base_url('owner') ?>">Home</a></li>
+                      <li><a href="<?= base_url('pemesanan') ?>">Pemesanan</a></li>
+                      <li><a href="<?= base_url('transaksi') ?>">Transaksi</a></li>
+                      <li><a href="<?= base_url('staf') ?>">Staf</a></li>
                       <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                  </ul>   
+                  </ul>    
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -106,32 +106,48 @@ https://templatemo.com/tm-591-villa-agency
   </div>
 </br>
   <div class="container">
-  
-  <form action="" class="form-horizontal pad-bg">
-        <h1 class="text-center">Edit Staf</h1>
-        </br>
-        <div class="form-group">
-          <label for="" class="control-label col-sm-3">Nama</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control input-lg" />
-          </div>  
-        </div>
-        </br>
-        <div class="form-group">
-          <label for="" class="control-label col-sm-3">Alamat</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control input-lg" />
-          </div>  
-        </div>
-        </br>
-        <div class="form-group">
-          <label for="" class="control-label col-sm-3">No HP</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control input-lg" />
-          </div>
-      </form>
+  <p> Daftar Staf Hotel </p>
 </br>
-<a class="btn btn-primary" href="<?= base_url('ownerstaf') ?>">Edit</a>
+
+<table class="table" border="1" id="table" 
+     data-toggle="table"
+     data-search="true"
+     data-filter-control="true" 
+     data-show-export="true"
+     data-click-to-select="true"
+     data-toolbar="#toolbar">
+	<thead>
+		<tr>
+			<th data-field="prenom" data-filter-control="input" data-sortable="true">Nama</th>
+			<th data-field="date" data-filter-control="select" data-sortable="true">alamat</th>
+			<th data-field="examen" data-filter-control="select" data-sortable="true">Nomor Telepon</th>
+      <th>Aksi</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Valérie</td>
+			<td>01/09/2015</td>
+			<td>Français</td>
+      <td>
+      <a type="button" class="btn btn-warning" href="<?= base_url('stafedit') ?>">Edit</a>
+      <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+			</td>
+		</tr>
+		<tr>
+			<td>Eric</td>
+			<td>05/09/2015</td>
+			<td>Philosophie</td>
+      <td>
+      <a type="button" class="btn btn-warning" href="<?= base_url('stafedit') ?>">Edit</a>
+      <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+				<!-- Add more buttons if needed -->
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+<a type="button" class="btn btn-primary" href="<?= base_url('staftambah') ?>">Tambah</a>
 </div>
 
   <footer>
@@ -155,3 +171,11 @@ https://templatemo.com/tm-591-villa-agency
 
   </body>
 </html>
+
+<script>
+                    function confirmDelete(userId) {
+                        if (confirm("Are you sure you want to delete this item?")) {
+                            document.getElementById("delete-form-" + userId).submit();
+                        }
+                    }
+                </script>
