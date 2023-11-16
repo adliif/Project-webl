@@ -8,6 +8,10 @@ class Staf extends BaseController
 {
     public function index()
     {
-        return view('stafhome');
+
+        $data =[
+            'title' => 'Tampilan staf',
+        ];
+        return view('/staf/index', $data);
     }
 }
