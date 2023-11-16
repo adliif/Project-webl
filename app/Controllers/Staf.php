@@ -13,43 +13,4 @@ class Staf extends BaseController
         ];
         return view('/staf/index', $data);
     }
-
-    public function viewPemesanan(): string
-    {
-        return view('ownerpemesanan');
-    }
-
-    public function viewStaf()
-    {
-        return view('ownerstaf');
-    }
-
-    public function editStaf()
-    {
-        return view('ownerstafedit');
-    }
-    public function tambahStaf()
-    {
-        return view('ownerstaftambah');
-    }
-
-    public function transaksiOwner()
-    {
-        return view('ownertransaksi');
-    }
-
-    public function viewHome()
-    {
-        return view('stafhome');
-    }
-
-    public function pemesanan()
-    {
-        return view('stafpemesanan');
-    }
-
-    public function transaksiStaf()
-    {
-        return view('staftransaksi');
-    }
 }
