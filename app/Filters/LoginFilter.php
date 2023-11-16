@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Myth\Auth\Exceptions\PermissionException;
 use Myth\Auth\Filters\BaseFilter;
+
 class LoginFilter extends BaseFilter implements FilterInterface
 {
     /**
