@@ -7,8 +7,13 @@ use Config\Auth;
  * @var RouteCollection $routes
  */
 
+// Routes User
 $routes->get('/user', 'User::index');
+$routes->get('/contact', 'User::contact');
+$routes->get('/reservasi', 'User::reservasi');
+$routes->get('/transaction', 'User::transaction');
 
+// Routes owner
 $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
 // $routes->get('/owner/index', 'Owner::index', ['filter' => 'role:owner']);
 $routes->get('/pemesanan', 'Owner::pemesanan', ['filter' => 'role:owner']);
@@ -19,8 +24,14 @@ $routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
 
 $routes->get('/staf', 'Staf::index', ['filter' => 'role:staf']);
 $routes->get('/staf/index', 'Staf::index', ['filter' => 'role:staf']);
-$routes->get('/staf/pemesanan', 'Staf::pemesanan', ['filter' => 'role:staf']);
-$routes->get('/staf/transaksi', 'Staf::transaksi', ['filter' => 'role:staf']);
+$routes->get('/ownerpemesanan', 'Staf::viewPemesanan');
+$routes->get('/ownertransaksi', 'Staf::transaksiOwner');
+$routes->get('/ownerstaf', 'Staf::viewStaf');
+$routes->get('/ownerstafedit', 'Staf::editStaf');
+$routes->get('/ownerstaftambah', 'Staf::tambahStaf');
+$routes->get('/staf/view', 'Staf::viewHome');
+$routes->get('/pemesanan', 'Staf::pemesanan');
+$routes->get('/transaksi', 'Staf::transaksiStaf');
 
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
