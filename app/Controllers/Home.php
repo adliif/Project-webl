@@ -36,12 +36,9 @@ class Home extends BaseController
         $db = db_connect();
         $data['title'] = "Data Staff";
         $query   = $db->query("SELECT * FROM staf WHERE id = '$id' ");
-        $data_isi['list'] = $query->getResult();
+        $data['list'] = $query->getResult();
 
-        return view('header',$data)
-            . view('menu')
-            . view('Edit',$data_isi)
-            . view('footer');
+        return  view('Edit',$data);
 
         // return view('index');
     }

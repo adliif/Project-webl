@@ -22,7 +22,7 @@
 											<th>No</th>
 											<th>Nomer Kamar</th>
 											<th>Nama Kamar</th>
-											<th>Fasilitas</th>
+											<th>Status</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -35,7 +35,7 @@
 											<td><?php echo $no; ?></td>
 											<td><?php echo $value['cNoKamar'] ?></td>
 											<td><?php echo $value['cNameKamar'] ?></td>
-											<td><?php echo $value['cFasilitas'] ?></td>
+											<td><?php echo $value['status'] ?></td>
 											<td style="width: 200px">
 												<a onclick="edit_data('<?= $value['id'];?>')" class="btn btn-info">Edit</a>
 		      									<a onclick="hapus('<?= $value['id'];?>')" class="btn btn-danger">Hapus</a>

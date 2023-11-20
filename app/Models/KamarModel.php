@@ -8,7 +8,7 @@ class KamarModel extends Model
 {
     protected $table = 'mkamar';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['cNoKamar', 'cNameKamar', 'cFasilitas'];
+    protected $allowedFields = ['cNoKamar', 'cNameKamar', 'cFasilitas','status'];
 
 
     public function getData($id = false,$table){
@@ -23,7 +23,7 @@ class KamarModel extends Model
 
     public function insertData($table, $data)
     {
-    	$this->allowedFields = ['cNoKamar', 'cNameKamar', 'cFasilitas'];
+    	$this->allowedFields = ['cNoKamar', 'cNameKamar', 'cFasilitas','status'];
         $this->table = $table;
         $this->insert($data);
     }
@@ -38,7 +38,7 @@ class KamarModel extends Model
     
     public function UpdateData($table, $data,$where)
     {
-        $this->allowedFields = ['cNoKamar', 'cNameKamar', 'cFasilitas'];
+        $this->allowedFields = ['cNoKamar', 'cNameKamar', 'cFasilitas','status'];
         $this->table = $table;
         return $this->where($where)->set($data)->update();
     }
