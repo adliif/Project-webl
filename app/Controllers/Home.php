@@ -15,12 +15,7 @@ class Home extends BaseController
     public function home(): string
     {
         $data['title'] = "Halaman Utama";
-    	return view('header',$data)
-            . view('menu')
-            . view('home')
-            . view('footer');
-
-        // return view('index');
+    	return  view('home',$data);
     }
 
 
@@ -29,12 +24,9 @@ class Home extends BaseController
         $db = db_connect();
         $data['title'] = "Data Staff";
         $query   = $db->query('SELECT * FROM staf');
-        $data_isi['list'] = $query->getResult();
+        $data['list'] = $query->getResult();
 
-        return view('header',$data)
-            . view('menu')
-            . view('staff',$data_isi)
-            . view('footer');
+        return view('staff',$data);
 
         // return view('index');
     }
