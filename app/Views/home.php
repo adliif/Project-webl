@@ -1,5 +1,5 @@
-
-
+<?php echo $this->extend('layout/template') ?>
+<?php echo $this->section('content'); ?>
   <div class="main-banner">
     <div class="owl-carousel owl-banner">
       <div class="item item-1">
@@ -464,3 +464,6 @@
       </div>
     </div>
   </div>
+
+
+<?php echo $this->endSection(); ?>

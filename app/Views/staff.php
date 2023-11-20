@@ -1,20 +1,6 @@
+<?php echo $this->extend('layout/template') ?>
 
-     
-    <!-- Add the Bootstrap CSS file -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-    <!-- Add the DataTables CSS file -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-
-    <!-- Add the Bootstrap JS file -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-    <!-- Add the DataTables JS file -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
-
-
+<?php echo $this->section('content'); ?>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -139,3 +125,6 @@ $(document).ready(function() {
 
 
 </script>
+
+
+<?php echo $this->endSection(); ?>
