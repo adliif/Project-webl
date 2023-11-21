@@ -118,73 +118,20 @@ https://templatemo.com/tm-591-villa-agency
 	<thead>
 		<tr>
 			<th  data-field="prenom" data-filter-control="input" data-sortable="true"> Status</th>
-			<th data-field="prenom" data-filter-control="input" data-sortable="true">Nama</th>
-			<th data-field="date" data-filter-control="select" data-sortable="true">Tanggal Pemesanan</th>
-			<th data-field="examen" data-filter-control="select" data-sortable="true">Total</th>
+			<th data-field="prenom" data-filter-control="input" data-sortable="true">Tanggal</th>
+			<th data-field="date" data-filter-control="select" data-sortable="true">Total</th>
+			<th data-field="examen" data-filter-control="select" data-sortable="true">Pemesanan</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>Selesai</td>
-			<td>Valérie</td>
-			<td>01/09/2015</td>
-			<td>Français</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Eric</td>
-			<td>05/09/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Valentin</td>
-			<td>05/09/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Valérie</td>
-			<td>05/09/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Eric</td>
-			<td>01/09/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Valérie</td>
-			<td>07/09/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Valentin</td>
-			<td>01/09/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Eric</td>
-			<td>01/10/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Valentin</td>
-			<td>07/09/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Valérie</td>
-			<td>01/10/2015</td>
-		</tr>
-		<tr>
-    <td>Selesai</td>
-			<td>Eric</td>
-			<td>07/09/2015</td>
-		</tr>
-		<tr>
-		<td>Selesai</td>
-			<td>Valentin</td>
-			<td>01/10/2015</td>
-		</tr>
+  <?php foreach ($reservations as $reservation) : ?>
+            <tr>
+                <td><?= $reservation['status']; ?></td>
+                <td><?= $reservation['tanggal']; ?></td>
+                <td><?= $reservation['total']; ?></td>
+                <td><?= $reservation['id_pemesanan']; ?></td>
+            </tr>
+        <?php endforeach; ?>
 	</tbody>
 </table>
 </div>

@@ -117,7 +117,8 @@ https://templatemo.com/tm-591-villa-agency
      data-toolbar="#toolbar">
 	<thead>
 		<tr>
-			<th data-field="prenom" data-filter-control="input" data-sortable="true">Id</th>
+			<th data-field="prenom" data-filter-control="input" data-sortable="true">Id Pemesanan</th>
+      <th data-field="examen" data-filter-control="select" data-sortable="true">Nomor Kamar</th>
 			<th data-field="date" data-filter-control="select" data-sortable="true">Tanggal Pemesanan</th>
 			<th data-field="examen" data-filter-control="select" data-sortable="true">Tanggal Masuk</th>
 			<th data-field="note" data-sortable="true">Tanggal Keluar</th>
@@ -128,6 +129,7 @@ https://templatemo.com/tm-591-villa-agency
   <?php foreach ($reservations as $reservation) : ?>
             <tr>
                 <td><?= $reservation['id']; ?></td>
+                <td><?= $reservation['nomor_kamar']; ?></td>
                 <td><?= $reservation['tanggal_pemesanan']; ?></td>
                 <td><?= $reservation['tanggal_masuk']; ?></td>
                 <td><?= $reservation['tanggal_keluar']; ?></td>
