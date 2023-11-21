@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PemesananModel;
+use App\Models\TransaksiModel;
 
 class Owner extends BaseController
 {
@@ -24,9 +25,11 @@ class Owner extends BaseController
         return view('/owner/pemesanan', $data);
     }
     public function transaksi()
-    {
+    {   
+        $model = new TransaksiModel();
         $data =[
             'title' => 'Tampilan transaksi',
+            'reservations' => $model->findAll(),
         ];
         return view('/owner/transaksi', $data);
     }
