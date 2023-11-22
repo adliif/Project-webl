@@ -26,17 +26,23 @@ class CreatePemesananTabel extends Migration
             'tanggal_keluar'=> [
                 'type'  => 'varchar',
                 'constraint'  => '100',
-
             ],
-            'harga'=> [
+            'nama'=> [
                 'type'  => 'varchar',
                 'constraint'  => '100',
-
             ],
             'nomor_kamar'=> [
-                'type' => 'INT',
-                'constraint' => 11,
+                'type'  => 'varchar',
+                'constraint'  => '100',
+            ],
+            'harga'=> [
+                'type'  => 'INT',
+                'constraint'  => 11,
                 'unsigned' => true,
+            ],
+            'aksi'=> [
+                'type'  => 'varchar',
+                'constraint'  => '100',
             ],
             'created_at' => [
                 'type'  => 'DATETIME',

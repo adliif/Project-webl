@@ -6,6 +6,28 @@ use CodeIgniter\Model;
 
 class PemesananModel extends Model
 {
+    public function savePemesanan($data){
+        $this->insert($data);
+    }
+    
+    public function getPemesanan($id = null){
+        if($id != null){
+            return $this->select('pemesanan.*, kamar.nama_kamar')
+            ->join('kamar', 'kamar.id = pemesanan.nomor_kamar')->find($id);
+        }
+        return $this->select('pemesanan.*, kamar.nama_kamar')
+        ->join('kamar', 'kamar.id = pemesanan.nomor_kamar')->findAll();
+
+    }
+
+    public function updatePemesanan($data, $id){
+        return $this->update($id, $data);
+    }
+
+    public function deletePemesanan($id){
+        return $this->delete($id);
+    }
+
     protected $table            = 'pemesanan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
@@ -15,7 +37,7 @@ class PemesananModel extends Model
     protected $allowedFields    = ['tanggal_pemesanan','tanggal_masuk','tanggal_keluar','harga'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
