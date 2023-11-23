@@ -2,6 +2,7 @@
 
 use CodeIgniter\Router\RouteCollection;
 use Config\Auth;
+use App\Controllers\User;
 
 /**
  * @var RouteCollection $routes
@@ -13,13 +14,22 @@ $routes->get('/contact', 'User::contact');
 $routes->get('/reservasi', 'User::reservasi');
 $routes->get('/transaction', 'User::transaction');
 
+$routes->get('/create', [User::class, 'create']);
+$routes->post('/pemesanan', [User::class, 'store']);
+$routes->put('/user/(:any)', [User::class, 'update']);
+$routes->get('/user/(:any)/edit', [User::class, 'edit']);
+$routes->delete('/user/(:any)', [User::class, 'destroy']);
+
+// Routes Owner
 $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
-// $routes->get('/owner/index', 'Owner::index', ['filter' => 'role:owner']);
 $routes->get('/pemesanan', 'Owner::pemesanan', ['filter' => 'role:owner']);
 $routes->get('/transaksi', 'Owner::transaksi', ['filter' => 'role:owner']);
 $routes->get('/staf', 'Owner::staf', ['filter' => 'role:owner']);
 $routes->get('/stafedit', 'Owner::edit', ['filter' => 'role:owner']);
 $routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
+
+// Routes Staf
+
 
 // Intro
 $routes->get('/', 'Home::index');

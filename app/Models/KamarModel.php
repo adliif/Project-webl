@@ -4,36 +4,36 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PemesananModel extends Model
+class KamarModel extends Model
 {
-    public function savePemesanan($data){
+    public function saveKamar($data){
         $this->insert($data);
     }
-    
-    public function getPemesanan($id = null){
+
+    public function getKamar($id = null){
         if($id != null){
-            return $this->select('pemesanan.*, kamar.nama_kamar')
-            ->join('kamar', 'kamar.id = pemesanan.nomor_kamar')->find($id);
+            return $this->select('kamar.*')
+            ->find($id);
         }
-        return $this->select('pemesanan.*')->findAll();
+        return $this->select('kamar.*')->findAll();
 
     }
 
-    public function updatePemesanan($data, $id){
+    public function updateKamar($data, $id){
         return $this->update($id, $data);
     }
 
-    public function deletePemesanan($id){
+    public function deleteKamar($id){
         return $this->delete($id);
     }
 
-    protected $table            = 'pemesanan';
+    protected $table            = 'kamar';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tanggal_pemesanan','tanggal_masuk','tanggal_keluar','nama','nomor_kamar','harga'];
+    protected $allowedFields    = ['nama_kamar','jenis_kamar'];
 
     // Dates
     protected $useTimestamps = true;
