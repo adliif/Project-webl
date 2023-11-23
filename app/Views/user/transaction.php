@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency - Property Listing by TemplateMo</title>
+    <title>Transaction</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -104,7 +104,7 @@ https://templatemo.com/tm-591-villa-agency
   </div>
 
     <div class="container">
-        <table class="table table-hover table-light table-bordered mt-4" style="margin:auto; text-align:center;">
+        <table class="table table-hover table-light table-bordered mt-5" style="margin:auto; text-align:center;">
             <thead class="table-dark">
                 <tr>
                     <th>Id</th>
@@ -120,21 +120,22 @@ https://templatemo.com/tm-591-villa-agency
             <tbody>
                 <?php
                 $no = 1;
+                foreach ($users as $pemesanan){
                 ?>
                 <tr>
-                    <td><?= $no?></td>
-                    <td>16/11/2023</td>
-                    <td>17/11/2023</td>
-                    <td>18/11/2023</td>
-                    <td>Adli Fiqrullah</td>
-                    <td>22 Hope Street Portland, OR 16540</td>
-                    <td>Rp. 500,000,00</td>
+                    <td><?= $no++?></td>
+                    <td><?= $pemesanan['tanggal_pemesanan'] ?></td>
+                    <td><?= $pemesanan['tanggal_masuk'] ?></td>
+                    <td><?= $pemesanan['tanggal_keluar'] ?></td>
+                    <td><?= $pemesanan['nama'] ?></td>
+                    <td><?= $pemesanan['nomor_kamar'] ?></td>
+                    <td><?= $pemesanan['harga'] ?></td>
                     <td class="d-flex justify-content-center">
-                        <a href="#" class="btn btn-warning" style="margin-right: 5px;">Reschedule</a>
-                        <form action="#" method="post">
+                        <a href="<?= base_url('user/'.$pemesanan['id'].'/edit') ?>" class="btn btn-warning" style="margin-right: 5px;">Reschedule</a>
+                        <form id="delete-form-<?= $pemesanan['id'] ?>" action="<?= base_url('user/'.$pemesanan['id']) ?>" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             <?= csrf_field() ?>
-                            <button type="button" class="btn btn-danger" onclick="confirmDelete()">Refund</button>
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete(<?= $pemesanan['id'] ?>)">Refund</button>
                         </form>
                     </td>
 
@@ -147,13 +148,14 @@ https://templatemo.com/tm-591-villa-agency
                     </script>
                 </tr>
                 <?php
+                }
                 ?>
             </tbody>
         </table>
-    </div><br><br>
+    </div>
 
   <footer>
-    <div class="container">
+    <div class="container" style="margin-top: 300px;">
       <div class="col-lg-12">
         <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
         

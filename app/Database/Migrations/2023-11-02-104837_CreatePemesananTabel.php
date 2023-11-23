@@ -28,14 +28,18 @@ class CreatePemesananTabel extends Migration
                 'constraint'  => '100',
 
             ],
-            'harga'=> [
+            'nama'=> [
                 'type'  => 'varchar',
                 'constraint'  => '100',
-
             ],
             'nomor_kamar'=> [
                 'type' => 'INT',
                 'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'harga'=> [
+                'type'  => 'INT',
+                'constraint'  => 11,
                 'unsigned' => true,
             ],
             'created_at' => [
