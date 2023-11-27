@@ -20,7 +20,7 @@ class User extends BaseController
     public function index()
     {
         $data =[
-            'title' => 'Tampilan user',
+            'title' => 'Home - Customers',
         ];
         return view('/user/index', $data);
     }
@@ -28,7 +28,7 @@ class User extends BaseController
     public function contact()
     {
         $data =[
-            'title' => 'Contact Us',
+            'title' => 'Contact Us - Customers',
         ];
         return view('/user/contact', $data);
     }
@@ -36,7 +36,7 @@ class User extends BaseController
     public function reservasi()
     {
         $data =[
-            'title' => 'Reservasi',
+            'title' => 'Reservasi - Customers',
         ];
         return view('/user/reservasi', $data);
     }
@@ -44,7 +44,7 @@ class User extends BaseController
     public function transaction()
     {
         $data =[
-            'title' => 'Transaction',
+            'title' => 'Transaction - Customers',
             'users' => $this->pemesananModel->getPemesanan()
         ];
         return view('/user/transaction', $data);
@@ -53,7 +53,7 @@ class User extends BaseController
     public function create(){
         $kamar = $this->kamarModel->getKamar();
         $data=[
-            'title'=>'Reservasi',
+            'title'=>'ADD Reservasi - Customers',
             'kamar'=>$kamar
         ];
         return view('/user/reservasiCreate',$data);
@@ -117,7 +117,7 @@ class User extends BaseController
         $kamar = $this->kamarModel->getKamar();
 
         $data = [
-            'title' => 'Reschedule',
+            'title' => 'Reschedule - Customers',
             'pemesanan'  => $pemesanan,
             'kamar'  => $kamar,
         ];
@@ -150,5 +150,26 @@ class User extends BaseController
         }
         return redirect()->to(base_url('/transaction'))
             ->with('success', 'Berhasil menghapus data');
+    }
+
+    public function sendEmail(){
+        $to = $this->request->getVar('email');
+        $subject = $this->request->getVar('subject');
+        $message = $this->request->getVar('message');
+
+ 
+        $email = \Config\Services::email();
+        $email->setTo($to);
+        $email->setFrom('adlii.fiqrullah@gmail.com', 'Customer');
+                
+        $email->setSubject($subject);
+        $email->setMessage($message);
+        if ($email->send()) {
+            return redirect()->to(base_url('/contact'))
+                ->with('success', 'Berhasil mengirim email');
+        } else{
+            return redirect()->back()->with('error', 'Gagal mengirim email');
+
+        }
     }
 }
