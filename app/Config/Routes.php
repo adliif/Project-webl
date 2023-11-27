@@ -19,6 +19,7 @@ $routes->post('/pemesanan', [User::class, 'store']);
 $routes->put('/user/(:any)', [User::class, 'update']);
 $routes->get('/user/(:any)/edit', [User::class, 'edit']);
 $routes->delete('/user/(:any)', [User::class, 'destroy']);
+$routes->match(['get', 'post'], 'sendEmail', 'User::sendEmail');
 
 // Routes Owner
 $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
