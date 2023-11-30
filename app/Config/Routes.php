@@ -28,6 +28,7 @@ $routes->get('/transaksi', 'Owner::transaksi', ['filter' => 'role:owner']);
 $routes->get('/staf', 'Owner::staf', ['filter' => 'role:owner']);
 $routes->get('/stafedit', 'Owner::edit', ['filter' => 'role:owner']);
 $routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
+$routes->post('/owner/createStaf', 'Owner::createStaf');
 
 // Routes Staf
 

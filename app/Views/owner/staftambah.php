@@ -105,33 +105,33 @@ https://templatemo.com/tm-591-villa-agency
     </div>
   </div>
 </br>
-  <div class="container">
-  
-  <form action="" class="form-horizontal pad-bg">
-        <h1 class="text-center">Edit Staf</h1>
-        </br>
+<div class="container">
+    <form action="<?= base_url('owner/createStaf') ?>" method="post" class="form-horizontal pad-bg">
+        <h1 class="text-center">Tambah Staf</h1>
+        <br>
         <div class="form-group">
-          <label for="" class="control-label col-sm-3">Nama</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control input-lg" />
-          </div>  
+            <label for="nama_staf" class="control-label col-sm-3">Nama</label>
+            <div class="col-sm-9">
+                <input type="text" name="nama_staf" class="form-control input-lg" required />
+            </div>
         </div>
-        </br>
+        <br>
         <div class="form-group">
-          <label for="" class="control-label col-sm-3">Alamat</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control input-lg" />
-          </div>  
+            <label for="alamat" class="control-label col-sm-3">Alamat</label>
+            <div class="col-sm-9">
+                <input type="text" name="alamat" class="form-control input-lg" required />
+            </div>
         </div>
-        </br>
+        <br>
         <div class="form-group">
-          <label for="" class="control-label col-sm-3">No HP</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control input-lg" />
-          </div>
-      </form>
-</br>
-<a class="btn btn-primary" href="<?= base_url('ownerstaf') ?>">Tambah</a>
+            <label for="no_telepon" class="control-label col-sm-3">No HP</label>
+            <div class="col-sm-9">
+                <input type="text" name="no_telepon" class="form-control input-lg" required />
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+    </form>
 </div>
 
   <footer>
