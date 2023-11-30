@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-
     public function index(): string
     {
         return view('welcome_message');
@@ -14,7 +13,12 @@ class Home extends BaseController
 
     public function home(): string
     {
+        $db = db_connect();
         $data['title'] = "Halaman Utama";
+        $query   = $db->query("SELECT * FROM grafik");
+        // dd($query->getResult());
+        $data['grafik_pemesanan'] = $query->getResult();
+
     	return  view('home',$data);
     }
 
