@@ -126,22 +126,17 @@ https://templatemo.com/tm-591-villa-agency
 	</thead>
 	<tbody>
 		<tr>
-			<td>Valérie</td>
-			<td>01/09/2015</td>
-			<td>Français</td>
-      <td>
-      <a type="button" class="btn btn-warning" href="<?= base_url('stafedit') ?>">Edit</a>
-      <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
-			</td>
-		</tr>
-		<tr>
-			<td>Eric</td>
-			<td>05/09/2015</td>
-			<td>Philosophie</td>
-      <td>
-      <a type="button" class="btn btn-warning" href="<?= base_url('stafedit') ?>">Edit</a>
-      <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
-				<!-- Add more buttons if needed -->
+    <?php foreach ($staf as $staf) : ?>
+            <tr>
+                <td><?= $staf['nama_staf']; ?></td>
+                <td><?= $staf['alamat']; ?></td>
+                <td><?= $staf['no_telepon']; ?></td>
+                <td>
+					<a type="button" class="btn btn-warning" href="<?= base_url('stafedit') ?>">Edit</a>
+					<button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+				</td>
+            </tr>
+        <?php endforeach; ?>
 			</td>
 		</tr>
 		
