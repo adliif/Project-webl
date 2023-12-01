@@ -6,38 +6,56 @@ use CodeIgniter\Model;
 
 class PemesananModel extends Model
 {
-    protected $table = 'pemesanan';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['id_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga'];
-
-    public function getData($id = false,$table){
-        $this->table = $table;
-        if($id == false){
-            return $this->findAll();
-        }else{
-            return $this->where(["id"=>$id])->first();
-        }
-     }
-
-    public function insertData($table, $data)
-    {
-    	$this->allowedFields = ['id_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga'];
-        $this->table = $table;
+    public function savePemesanan($data){
         $this->insert($data);
     }
-
-    public function deleteByCondition($table,$where)
-    {
-        // Delete data based on the provided condition
-         $this->table = $table;
-        return $this->where($where)->delete();
-    }
     
-    public function UpdateData($table, $data,$where)
-    {
-        $this->allowedFields = ['id_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga','status'];
-        $this->table = $table;
-        return $this->where($where)->set($data)->update();
+    public function getPemesanan($id = null){
+        if($id != null){
+            return $this->select('pemesanan.*, kamar.nama_kamar')
+            ->join('kamar', 'kamar.id = pemesanan.nomor_kamar')->find($id);
+        }
+        return $this->select('pemesanan.*')->findAll();
+
     }
 
+    public function updatePemesanan($data, $id){
+        return $this->update($id, $data);
+    }
+
+    public function deletePemesanan($id){
+        return $this->delete($id);
+    }
+
+    protected $table            = 'pemesanan';
+    protected $primaryKey       = 'id';
+    protected $useAutoIncrement = true;
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = ['tanggal_pemesanan','tanggal_masuk','tanggal_keluar','nama','nomor_kamar','harga'];
+
+    // Dates
+    protected $useTimestamps = true;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
+
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
+
+    // Callbacks
+    protected $allowCallbacks = true;
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = [];
+    protected $afterUpdate    = [];
+    protected $beforeFind     = [];
+    protected $afterFind      = [];
+    protected $beforeDelete   = [];
+    protected $afterDelete    = [];
 }

@@ -4,39 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KamarModel extends Model
+class StafModel extends Model
 {
-    public function saveKamar($data){
-        $this->insert($data);
-    }
-
-    public function getKamar($id = null){
-        if($id != null){
-            return $this->select('kamar.*')
-            ->find($id);
-        }
-        return $this->select('kamar.*')->findAll();
-
-    }
-
-    public function updateKamar($data, $id){
-        return $this->update($id, $data);
-    }
-
-    public function deleteKamar($id){
-        return $this->delete($id);
-    }
-
-    protected $table            = 'kamar';
+    protected $table            = 'staf';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kamar','jenis_kamar'];
+    protected $allowedFields    = ['nama_staf','alamat','no_telepon'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -58,4 +37,17 @@ class KamarModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function saveStaf($data){
+        $this->insert($data);
+    }
+
+    public function getStaf($id = null){
+        if($id != null){
+            return $this->select('staf.*')
+            ->find($id);
+        }
+        return $this->select('staf.*')->findAll();
+
+    }
 }

@@ -4,39 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KamarModel extends Model
+class TransaksiModel extends Model
 {
-    public function saveKamar($data){
-        $this->insert($data);
-    }
-
-    public function getKamar($id = null){
-        if($id != null){
-            return $this->select('kamar.*')
-            ->find($id);
-        }
-        return $this->select('kamar.*')->findAll();
-
-    }
-
-    public function updateKamar($data, $id){
-        return $this->update($id, $data);
-    }
-
-    public function deleteKamar($id){
-        return $this->delete($id);
-    }
-
-    protected $table            = 'kamar';
+    protected $table            = 'transaksi';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kamar','jenis_kamar'];
+    protected $allowedFields    = ['tanggal','total','id_staf','nomor_kamar','id_pemesanan'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

@@ -93,7 +93,13 @@ class AuthController extends Controller
             return redirect()->to(route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash)->withCookies();
         }
 
-        $redirectURL = session('redirect_url') ?? site_url('/');
+        if(in_groups("user")){
+            $redirectURL = base_url('/user');
+        }else if(in_groups("staf")){
+            $redirectURL = base_url('/staf');
+        }else if(in_groups("owner")){
+            $redirectURL = base_url('/owner');
+        }
         unset($_SESSION['redirect_url']);
 
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
@@ -108,7 +114,7 @@ class AuthController extends Controller
             $this->auth->logout();
         }
 
-        return redirect()->to(site_url('/'));
+        return redirect()->to(base_url('/'));
     }
 
     //--------------------------------------------------------------------
