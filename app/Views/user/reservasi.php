@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency - Property Listing by TemplateMo</title>
+    <title><?= $title ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@ https://templatemo.com/tm-591-villa-agency
       <div class="row">
         <div class="col-lg-8 col-md-8">
           <ul class="info">
-            <li><i class="fa fa-envelope"></i> info@company.com</li>
+            <li><i class="fa fa-envelope"></i> info@comp any.com</li>
             <li><i class="fa fa-map"></i> Sunny Isles Beach, FL 33160</li>
           </ul>
         </div>
@@ -71,16 +71,15 @@ https://templatemo.com/tm-591-villa-agency
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <h1>Villa</h1>
+                        <h1>VARILITEL</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="properties.html" class="active">Properties</a></li>
-                      <li><a href="property-details.html">Property Details</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                      <li><a href="<?=base_url('/user')?>">Home</a></li>
+                      <li><a href="<?=base_url('/reservasi')?>" class="active">Reservasi</a></li>
+                      <li><a href="<?=base_url('/contact')?>">Contact Us</a></li>
+                      <li><a href="<?=base_url('/transaction')?>"><i class="fa fa-calendar"></i> Transaction</a></li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -97,8 +96,8 @@ https://templatemo.com/tm-591-villa-agency
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <span class="breadcrumb"><a href="#">Home</a> / Properties</span>
-          <h3>Properties</h3>
+          <span class="breadcrumb"><a href="#">Home</a> / Reservasi</span>
+          <h3>Reservasi</h3>
         </div>
       </div>
     </div>
@@ -111,22 +110,22 @@ https://templatemo.com/tm-591-villa-agency
           <a class="is_active" href="#!" data-filter="*">Show All</a>
         </li>
         <li>
-          <a href="#!" data-filter=".adv">Apartment</a>
+          <a href="#!" data-filter=".adv">Family Room</a>
         </li>
         <li>
-          <a href="#!" data-filter=".str">Villa House</a>
+          <a href="#!" data-filter=".str">Junior Suite Room</a>
         </li>
         <li>
-          <a href="#!" data-filter=".rac">Penthouse</a>
+          <a href="#!" data-filter=".rac">Suite Room</a>
         </li>
       </ul>
       <div class="row properties-box">
         <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
           <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-01.jpg" alt=""></a>
+            <a href="#"><img src="assets/images/property-01.jpg" alt=""></a>
             <span class="category">Luxury Villa</span>
             <h6>$2.264.000</h6>
-            <h4><a href="property-details.html">18 Old Street Miami, OR 97219</a></h4>
+            <h4><a href="#">18 Old Street Miami, OR 97219</a></h4>
             <ul>
               <li>Bedrooms: <span>8</span></li>
               <li>Bathrooms: <span>8</span></li>
@@ -135,7 +134,7 @@ https://templatemo.com/tm-591-villa-agency
               <li>Parking: <span>6 spots</span></li>
             </ul>
             <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
+              <a href="/create">Schedule a visit</a>
             </div>
           </div>
         </div>

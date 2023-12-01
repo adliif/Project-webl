@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateAkunTabel extends Migration
+class Kamar extends Migration
 {
     public function up()
     {
@@ -15,18 +15,13 @@ class CreateAkunTabel extends Migration
                 'unsigned'  => true,
                 'auto_increment'    =>true,
             ],
-            'username'    =>[
+            'nama_kamar'    =>[
                 'type'      => 'VARCHAR',
                 'constraint'=> '220',
             ],
-            'password' => [
+            'jenis_kamar' => [
                 'type'  => 'varchar',
                 'constraint'  => '10',
-            ],
-            'role'=> [
-                'type'  => 'varchar',
-                'constraint'  => '100',
-
             ],
             'created_at' => [
                 'type'  => 'DATETIME',
@@ -43,11 +38,11 @@ class CreateAkunTabel extends Migration
         ]);
 
         $this->forge->addKey('id',true,true);
-        $this->forge->createTable('akun');
+        $this->forge->createTable('kamar');
     }
 
     public function down()
     {
-        $this->forge->dropTable('akun',true);
+        $this->forge->dropTable('kamar',true);
     }
 }

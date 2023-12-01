@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency TemplateMo - Contact Page</title>
+    <title><?= $title ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -72,16 +72,15 @@ https://templatemo.com/tm-591-villa-agency
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <h1>Villa</h1>
+                        <h1>VARILITEL</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="properties.html">Properties</a></li>
-                      <li><a href="property-details.html">Property Details</a></li>
-                      <li><a href="contact.html" class="active">Contact Us</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                      <li><a href="<?=base_url('/user')?>">Home</a></li>
+                      <li><a href="<?=base_url('/reservasi')?>">Reservasi</a></li>
+                      <li><a href="<?=base_url('/contact')?>" class="active">Contact Us</a></li>
+                      <li><a href="<?=base_url('/transaction')?>"><i class="fa fa-calendar"></i> Transaction</a></li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -130,14 +129,8 @@ https://templatemo.com/tm-591-villa-agency
           </div>
         </div>
         <div class="col-lg-6">
-          <form id="contact-form" action="" method="post">
+          <form id="contact-form" action="<?=base_url('/sendEmail')?>" method="post">
             <div class="row">
-              <div class="col-lg-12">
-                <fieldset>
-                  <label for="name">Full Name</label>
-                  <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
-                </fieldset>
-              </div>
               <div class="col-lg-12">
                 <fieldset>
                   <label for="email">Email Address</label>

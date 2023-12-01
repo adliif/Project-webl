@@ -23,10 +23,9 @@ class CreateTransaksiTabel extends Migration
                 'type'  => 'varchar',
                 'constraint'  => '10',
             ],
-            'id_staf'=> [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
+            'status'=> [
+                'type' => 'varchar',
+                'constraint' => 20,
 
             ],
             'id_pemesanan'=> [
@@ -50,7 +49,6 @@ class CreateTransaksiTabel extends Migration
         ]);
 
         $this->forge->addKey('id',true,true);
-        $this->forge->addForeignKey('id_staf','staf','id');
         $this->forge->addForeignKey('id_pemesanan','pemesanan','id');
         $this->forge->createTable('transaksi');
     }
