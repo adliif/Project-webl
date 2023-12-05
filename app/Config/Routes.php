@@ -38,6 +38,23 @@ $routes->get('/homestaff/hapus/(:num)', 'HomeStaff::hapus/$1');
 $routes->match(['get', 'post'], '/homestaff/tambah', 'HomeStaff::tambah'); // Use 'match' for both GET and POST requests
 $routes->match(['get', 'post'], '/homestaff/update', 'HomeStaff::update'); // Use 'match' for both GET and POST requests
 
+// =======================KAMAR=====================================
+$routes->get('/kamar', 'Kamar::index');
+$routes->post('/kamar/simpan', 'Kamar::simpan');
+$routes->post('/kamar/hapus/(:segment)', 'Kamar::hapus/$1');
+$routes->get('/kamar/edit/(:segment)', 'Kamar::edit/$1');
+$routes->post('/kamar/update/(:segment)', 'Kamar::update/$1');
+
+
+// ==========================DATA PEMESANAN==================================
+$routes->get('/datapemesanan', 'Pemesanan::index');
+$routes->post('/pemesanan/simpan', 'Pemesanan::simpan');
+$routes->post('/pemesanan/hapus/(:segment)', 'Pemesanan::hapus/$1');
+$routes->get('/pemesanan/edit/(:segment)', 'Pemesanan::edit/$1');
+$routes->post('/pemesanan/update/(:segment)', 'Pemesanan::update/$1');
+$routes->post('/pemesanan/acc/(:segment)', 'Pemesanan::acc/$1');
+
+
 
 // Intro
 $routes->get('/', 'Home::index');
