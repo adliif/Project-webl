@@ -31,7 +31,13 @@ $routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
 $routes->post('/owner/createStaf', 'Owner::createStaf');
 
 // Routes Staf
-$routes->get('/HomeStaff', 'HomeStaff::home');
+$routes->get('/homestaff', 'HomeStaff::home');
+$routes->get('/homestaff/staff', 'HomeStaff::staff');
+$routes->get('/homestaff/edit/(:num)', 'HomeStaff::edit/$1');
+$routes->get('/homestaff/hapus/(:num)', 'HomeStaff::hapus/$1');
+$routes->match(['get', 'post'], '/homestaff/tambah', 'HomeStaff::tambah'); // Use 'match' for both GET and POST requests
+$routes->match(['get', 'post'], '/homestaff/update', 'HomeStaff::update'); // Use 'match' for both GET and POST requests
+
 
 // Intro
 $routes->get('/', 'Home::index');

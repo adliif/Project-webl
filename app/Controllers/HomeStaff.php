@@ -55,7 +55,7 @@ class HomeStaff extends BaseController
         $builder->where('id', $id);
 
         if ($builder->delete()) {
-            return redirect()->to('/home/staff');
+            return redirect()->to('/homestaff/staff');
         } else {
             die('Error deleting staff member.');
         }
@@ -86,14 +86,14 @@ class HomeStaff extends BaseController
                 $query = $db->query("INSERT INTO staf (nama_staf, alamat, no_telepon) VALUES ('$nama_staf', '$alamat', '$no_telepon')");
 
                 // Redirect to the home page
-                return redirect()->to('/home/staff');
+                return redirect()->to('/homestaff/staff');
             } else {
                 // Handle validation errors, if any
-                return view('home/staff', ['validation' => $validation]);
+                return view('staf/homestaff', ['validation' => $validation]);
             }
         }
 
-        return view('home/staff');
+        return view('staf/homeStaff');
     }
 
 
@@ -123,10 +123,10 @@ class HomeStaff extends BaseController
                 $query = $db->query("UPDATE `staf` SET `alamat` = '$alamat',nama_staf = '$nama_staf', no_telepon = '$no_telepon' WHERE `id` = '$id'; ");
 
                 // Redirect to the home page
-                return redirect()->to('/home/staff');
+                return redirect()->to('/homestaff/staff');
             } else {
                 // Handle validation errors, if any
-                return view('home/staff', ['validation' => $validation]);
+                return view('staff', ['validation' => $validation]);
             }
         }
 

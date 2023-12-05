@@ -96,7 +96,7 @@ class AuthController extends Controller
         if(in_groups("user")){
             $redirectURL = base_url('/user');
         }else if(in_groups("staf")){
-            $redirectURL = base_url('/HomeStaff');
+            $redirectURL = base_url('/homestaff');
         }else if(in_groups("owner")){
             $redirectURL = base_url('/owner');
         }
