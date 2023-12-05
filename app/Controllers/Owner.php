@@ -45,12 +45,36 @@ class Owner extends BaseController
         return view('/owner/staf', $data);
     }
 
-    public function edit()
+    public function editStaf($id)
     {
-        $data =[
-            'title' => 'Tampilan staf',
+        $stafModel = new StafModel();
+
+        $data = [
+            'title' => 'Edit Staf',
+            'staf' => $stafModel->find($id), // Retrieve staf details by ID
         ];
-        return view('/owner/stafedit');
+
+        return view('/owner/stafedit', $data);
+    }
+
+    // Add the following method for handling the update
+    public function updateStaf($id)
+    {
+        $stafModel = new StafModel();
+
+        if ($this->request->getMethod() === 'post') {
+            $data = [
+                'nama_staf' => $this->request->getPost('nama_staf'),
+                'alamat' => $this->request->getPost('alamat'),
+                'no_telepon' => $this->request->getPost('no_telepon'),
+            ];
+
+            $stafModel->update($id, $data);
+
+            return redirect()->to(base_url('staf'))->with('success', 'Staf updated successfully');
+        }
+
+        return redirect()->back()->with('error', 'Invalid request');
     }
     public function tambah()
     {
@@ -82,5 +106,11 @@ class Owner extends BaseController
         return view('/owner/staftambah', $data);
     }
 
+    public function deleteStaf($stafId)
+{
+    $stafModel = new StafModel();
+    $stafModel->delete($stafId);
+    return redirect()->to('/staf')->with('success', 'Staf deleted successfully');
+}
 
 }

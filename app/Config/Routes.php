@@ -26,10 +26,11 @@ $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
 $routes->get('/pemesanan', 'Owner::pemesanan', ['filter' => 'role:owner']);
 $routes->get('/transaksi', 'Owner::transaksi', ['filter' => 'role:owner']);
 $routes->get('/staf', 'Owner::staf', ['filter' => 'role:owner']);
-$routes->get('/stafedit', 'Owner::edit', ['filter' => 'role:owner']);
+$routes->get('/stafedit/(:num)', 'Owner::editStaf/$1', ['filter' => 'role:owner']); // Add this line for editing
+$routes->post('/stafedit/(:num)', 'Owner::updateStaf/$1', ['filter' => 'role:owner']);
 $routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
 $routes->post('/owner/createStaf', 'Owner::createStaf');
-
+$routes->match(['get', 'delete'], '/staf/delete/(:num)', 'Owner::deleteStaf/$1', ['filter' => 'role:owner']);
 // Routes Staf
 
 
