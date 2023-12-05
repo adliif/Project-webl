@@ -31,7 +31,7 @@ $routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
 $routes->post('/owner/createStaf', 'Owner::createStaf');
 
 // Routes Staf
-
+$routes->get('/HomeStaff', 'HomeStaff::home');
 
 // Intro
 $routes->get('/', 'Home::index');
