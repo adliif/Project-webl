@@ -76,7 +76,7 @@ CREATE TABLE `auth_groups_users` (
 
 /*Data for the table `auth_groups_users` */
 
-insert  into `auth_groups_users`(`group_id`,`user_id`) values (3,1);
+insert  into `auth_groups_users`(`group_id`,`user_id`) values (2,2),(3,1);
 
 /*Table structure for table `auth_logins` */
 
@@ -92,11 +92,11 @@ CREATE TABLE `auth_logins` (
   PRIMARY KEY (`id`),
   KEY `email` (`email`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 /*Data for the table `auth_logins` */
 
-insert  into `auth_logins`(`id`,`ip_address`,`email`,`user_id`,`date`,`success`) values (1,'::1','ayuni1',NULL,'2023-12-01 02:45:48',0),(2,'::1','ayuni1',NULL,'2023-12-01 02:46:04',0),(3,'::1','user1@gmail.com',1,'2023-12-01 02:46:55',1),(4,'::1','staf1@gmail.com',2,'2023-12-01 02:51:08',1),(5,'::1','user1@gmail.com',1,'2023-12-01 02:51:47',1),(6,'::1','ayuni1',NULL,'2023-12-05 12:56:20',0),(7,'::1','ayuni1',NULL,'2023-12-05 12:56:36',0),(8,'::1','staf1@gmail.com',2,'2023-12-05 12:56:56',1),(9,'::1','user1@gmail.com',NULL,'2023-12-05 12:57:25',0),(10,'::1','user1@gmail.com',NULL,'2023-12-05 12:57:42',0),(11,'::1','user1@gmail.com',1,'2023-12-05 12:59:12',1),(12,'::1','user1@gmail.com',1,'2023-12-05 13:18:36',1);
+insert  into `auth_logins`(`id`,`ip_address`,`email`,`user_id`,`date`,`success`) values (1,'::1','ayuni1',NULL,'2023-12-01 02:45:48',0),(2,'::1','ayuni1',NULL,'2023-12-01 02:46:04',0),(3,'::1','user1@gmail.com',1,'2023-12-01 02:46:55',1),(4,'::1','staf1@gmail.com',2,'2023-12-01 02:51:08',1),(5,'::1','user1@gmail.com',1,'2023-12-01 02:51:47',1),(6,'::1','ayuni1',NULL,'2023-12-05 12:56:20',0),(7,'::1','ayuni1',NULL,'2023-12-05 12:56:36',0),(8,'::1','staf1@gmail.com',2,'2023-12-05 12:56:56',1),(9,'::1','user1@gmail.com',NULL,'2023-12-05 12:57:25',0),(10,'::1','user1@gmail.com',NULL,'2023-12-05 12:57:42',0),(11,'::1','user1@gmail.com',1,'2023-12-05 12:59:12',1),(12,'::1','user1@gmail.com',1,'2023-12-05 13:18:36',1),(13,'::1','staf1@gmail.com',2,'2023-12-05 13:43:05',1),(14,'::1','staf1@gmail.com',2,'2023-12-05 13:45:46',1),(15,'::1','staf1@gmail.com',2,'2023-12-05 13:45:47',1),(16,'::1','staf1@gmail.com',2,'2023-12-05 13:45:48',1),(17,'::1','staf1@gmail.com',2,'2023-12-05 13:45:49',1),(18,'::1','staf1@gmail.com',2,'2023-12-05 13:46:06',1),(19,'::1','user1@gmail.com',1,'2023-12-05 13:57:36',1),(20,'::1','staf1@gmail.com',2,'2023-12-05 14:10:18',1),(21,'::1','staf1@gmail.com',2,'2023-12-05 14:23:50',1),(22,'::1','staf1@gmail.com',2,'2023-12-05 14:37:06',1);
 
 /*Table structure for table `auth_permissions` */
 
@@ -209,11 +209,11 @@ CREATE TABLE `mkamar` (
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `mkamar` */
 
-insert  into `mkamar`(`id`,`cNoKamar`,`cNameKamar`,`cFasilitas`,`status`,`created_at`,`updated_at`,`deleted_at`) values (1,'101','MAWAR 01','Lengkap','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,'103','ANGGREK LANTAI 01','Free Wifi, Kamar Mandi Dalam, TV, AC, Kunci Otomatis, Housekeeping Harian, Layanan Resepsionis 24 jam, Free Breakfast','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,'201','ANGGREK LANTAI 02','Free Wifi, Kamar Mandi Dalam, TV, AC, Kunci Otomatis, Housekeeping Harian, Layanan Resepsionis 24 jam, Free Breakfast','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,'201','ANGGREK LANTAI 1','Kosong','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00');
+insert  into `mkamar`(`id`,`cNoKamar`,`cNameKamar`,`cFasilitas`,`status`,`created_at`,`updated_at`,`deleted_at`) values (1,'101','MAWAR 01','Lengkap','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,'103','ANGGREK LANTAI 01','Free Wifi, Kamar Mandi Dalam, TV, AC, Kunci Otomatis, Housekeeping Harian, Layanan Resepsionis 24 jam, Free Breakfast','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,'201','ANGGREK LANTAI 02','Free Wifi, Kamar Mandi Dalam, TV, AC, Kunci Otomatis, Housekeeping Harian, Layanan Resepsionis 24 jam, Free Breakfast','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,'201','ANGGREK LANTAI 1','Kosong','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(9,'102','LANTAI 2 ','-','Ditempati','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00');
 
 /*Table structure for table `pemesanan` */
 
@@ -233,11 +233,11 @@ CREATE TABLE `pemesanan` (
   PRIMARY KEY (`id`),
   KEY `id_kamar` (`id_kamar`),
   CONSTRAINT `pemesanan_ibfk_1` FOREIGN KEY (`id_kamar`) REFERENCES `mkamar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 /*Data for the table `pemesanan` */
 
-insert  into `pemesanan`(`id`,`id_kamar`,`tanggal_pemesanan`,`tanggal_masuk`,`tanggal_keluar`,`harga`,`status`,`created_at`,`updated_at`,`deleted_at`) values (4,1,'2023-11-16','2023-11-30','2023-12-01',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,4,'2023-11-24','2023-11-25','2023-11-26',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,5,'2023-11-30','2023-11-30','2023-12-01',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(9,7,'2023-12-01','2023-12-01','2023-12-02',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00');
+insert  into `pemesanan`(`id`,`id_kamar`,`tanggal_pemesanan`,`tanggal_masuk`,`tanggal_keluar`,`harga`,`status`,`created_at`,`updated_at`,`deleted_at`) values (4,1,'2023-11-16','2023-11-30','2023-12-01',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,4,'2023-11-24','2023-11-25','2023-11-26',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,5,'2023-11-30','2023-11-30','2023-12-01',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(9,7,'2023-12-01','2023-12-01','2023-12-02',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(11,9,'2023-12-05','2023-12-05','2023-12-13',200000,'Dikonfirmasi','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00');
 
 /*Table structure for table `staf` */
 
@@ -252,7 +252,7 @@ CREATE TABLE `staf` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 /*Data for the table `staf` */
 
