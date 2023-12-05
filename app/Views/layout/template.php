@@ -84,15 +84,18 @@ https://templatemo.com/tm-591-villa-agency
           <ul class="info">
             <li><i class="fa fa-envelope"></i> info@company.com</li>
             <li><i class="fa fa-map"></i> Sunny Isles Beach, FL 33160</li>
+
           </ul>
         </div>
         <div class="col-lg-4 col-md-4">
           <ul class="social-links">
             <li><a href="#"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <!-- <li><a href="#"><i class="fab fa-linkedin"></i></a></li> -->
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="<?php echo base_url('logout') ?>" style="color: #000;background-color:red" title="Logout"><i class="fab fa-solid fa-power-off" style="color: #fff"></i></a></li>
           </ul>
+          
         </div>
       </div>
     </div>
