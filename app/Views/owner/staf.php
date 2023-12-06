@@ -121,7 +121,7 @@ https://templatemo.com/tm-591-villa-agency
 			<th data-field="prenom" data-filter-control="input" data-sortable="true">Nama</th>
 			<th data-field="date" data-filter-control="select" data-sortable="true">alamat</th>
 			<th data-field="examen" data-filter-control="select" data-sortable="true">Nomor Telepon</th>
-      <th>Aksi</th>
+      <th class="edit-column">Aksi</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -132,9 +132,15 @@ https://templatemo.com/tm-591-villa-agency
                 <td><?= $staf['alamat']; ?></td>
                 <td><?= $staf['no_telepon']; ?></td>
                 <td>
-					<a type="button" class="btn btn-warning" href="<?= base_url('stafedit') ?>">Edit</a>
-					<button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
-				</td>
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-warning btn-edit" href="<?= base_url('stafedit/' . $staf['id']) ?>">Edit</a>
+                            &nbsp; <!-- Tambahkan spasi di sini -->
+                            <form action="<?= base_url('staf/delete/' . $staf['id']) ?>" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this staf?')">Delete</button>
+                            </form>
+                        </div>
+                    </td>
             </tr>
         <?php endforeach; ?>
 			</td>
@@ -167,10 +173,21 @@ https://templatemo.com/tm-591-villa-agency
   </body>
 </html>
 
+<style>
+    .edit-column {
+        width: 150px; /* Sesuaikan lebar sesuai kebutuhan */
+    }
+
+    .btn-group {
+        display: flex;
+        gap: 5px; /* Sesuaikan jarak sesuai kebutuhan */
+    }
+</style>
+
 <script>
-                    function confirmDelete(userId) {
-                        if (confirm("Are you sure you want to delete this item?")) {
-                            document.getElementById("delete-form-" + userId).submit();
-                        }
-                    }
-                </script>
+    function confirmDelete(stafId) {
+        if (confirm("Are you sure you want to delete this staf?")) {
+            window.location.href = '<?= base_url('owner/deleteStaf/') ?>' + stafId;
+        }
+    }
+</script>
