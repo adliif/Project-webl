@@ -31,6 +31,16 @@ $routes->post('/stafedit/(:num)', 'Owner::updateStaf/$1', ['filter' => 'role:own
 $routes->get('/staftambah', 'Owner::tambah', ['filter' => 'role:owner']);
 $routes->post('/owner/createStaf', 'Owner::createStaf');
 $routes->match(['get', 'delete'], '/staf/delete/(:num)', 'Owner::deleteStaf/$1', ['filter' => 'role:owner']);
+
+$routes->get('/kamar', 'Owner::kamar', ['filter' => 'role:owner']);
+$routes->get('/kamaredit/(:num)', 'Owner::editKamar/$1');
+$routes->post('/updateKamar/(:num)', 'Owner::updateKamar/$1');
+$routes->get('/kamartambah', 'Owner::tambahKamar', ['filter' => 'role:owner']);
+$routes->match(['get', 'delete'], '/kamar/delete/(:num)', 'Owner::deleteKamar/$1', ['filter' => 'role:owner']);
+$routes->post('/owner/createKamar', 'Owner::createKamar');
+
+
+
 // Routes Staf
 
 
