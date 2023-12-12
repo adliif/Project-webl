@@ -27,13 +27,24 @@ class KamarModel extends Model
         return $this->delete($id);
     }
 
+// KamarModel.php
+
+public function findAllWithTypeNameAndStatus()
+{
+    $this->select('kamar.*, jeniskamar.type_kamar as type_kamar_name, statuskamar.status as status_name');
+    $this->join('jeniskamar', 'jeniskamar.id = kamar.type_kamar');
+    $this->join('statuskamar', 'statuskamar.id = kamar.status');
+    return $this->findAll();
+}
+
+
     protected $table            = 'kamar';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kamar','jenis_kamar'];
+    protected $allowedFields = ['nama_kamar', 'type_kamar', 'status', 'harga'];
 
     // Dates
     protected $useTimestamps = true;
@@ -58,4 +69,5 @@ class KamarModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    
 }

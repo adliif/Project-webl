@@ -81,6 +81,7 @@ https://templatemo.com/tm-591-villa-agency
                       <li><a href="<?= base_url('pemesanan') ?>">Pemesanan</a></li>
                       <li><a href="<?= base_url('transaksi') ?>">Transaksi</a></li>
                       <li><a href="<?= base_url('staf') ?>">Staf</a></li>
+                      <li><a href="<?= base_url('kamar') ?>">Kamar</a></li>
                       <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
                   </ul>   
                     <a class='menu-trigger'>

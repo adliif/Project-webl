@@ -107,34 +107,51 @@ https://templatemo.com/tm-591-villa-agency
   </div>
 </br>
 <div class="container">
-    <form action="<?= base_url('owner/createStaf') ?>" method="post" class="form-horizontal pad-bg">
-        <h1 class="text-center">Tambah Staf</h1>
-        <br>
-        <div class="form-group">
-            <label for="nama_staf" class="control-label col-sm-3">Nama</label>
-            <div class="col-sm-9">
-                <input type="text" name="nama_staf" class="form-control input-lg" required />
-            </div>
+    <p>Edit Detail Kamar Hotel</p>
+    <form action="<?= base_url('updateKamar/' . $kamar['id']) ?>" method="post" class="form-horizontal pad-bg">
+      <h1 class="text-center">Edit Kamar</h1>
+      <br>
+      <div class="form-group">
+        <label for="nama_kamar" class="control-label col-sm-3">Nama Kamar</label>
+        <div class="col-sm-9">
+          <input type="text" name="nama_kamar" class="form-control input-lg" value="<?= $kamar['nama_kamar'] ?>" />
         </div>
-        <br>
-        <div class="form-group">
-            <label for="alamat" class="control-label col-sm-3">Alamat</label>
-            <div class="col-sm-9">
-                <input type="text" name="alamat" class="form-control input-lg" required />
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="no_telepon" class="control-label col-sm-3">No HP</label>
-            <div class="col-sm-9">
-                <input type="text" name="no_telepon" class="form-control input-lg" required />
-            </div>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Tambah</button>
-    </form>
+      </div>
+      <div class="form-group">
+    <label for="type_kamar" class="control-label col-sm-3">Type Kamar</label>
+    <div class="col-sm-9">
+        <select name="type_kamar" class="form-control input-lg" required>
+            <?php foreach ($jenis_kamar as $jenis) : ?>
+                <option value="<?= $jenis['id']; ?>" <?= ($jenis['id'] == $kamar['type_kamar']) ? 'selected' : ''; ?>>
+                    <?= $jenis['type_kamar']; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
 </div>
 
+<!-- Status -->
+<div class="form-group">
+    <label for="status" class="control-label col-sm-3">Status</label>
+    <div class="col-sm-9">
+        <select name="status" class="form-control input-lg" required>
+            <?php foreach ($status_kamar as $status) : ?>
+                <option value="<?= $status['id']; ?>" <?= ($status['id'] == $kamar['status']) ? 'selected' : ''; ?>>
+                    <?= $status['status']; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="harga" class="control-label col-sm-3">Harga</label>
+    <div class="col-sm-9">
+        <input type="text" name="harga" class="form-control input-lg" value="<?= $kamar['harga'] ?>" />
+    </div>
+</div>
+      <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+  </div>
   <footer>
     <div class="container">
       <div class="col-lg-12">
