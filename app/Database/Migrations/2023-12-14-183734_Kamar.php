@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateTransaksiTabel extends Migration
+class Kamar extends Migration
 {
     public function up()
     {
@@ -15,24 +15,24 @@ class CreateTransaksiTabel extends Migration
                 'unsigned'  => true,
                 'auto_increment'    =>true,
             ],
-            'tanggal'    =>[
+            'nama_kamar'    =>[
                 'type'      => 'VARCHAR',
                 'constraint'=> '220',
             ],
-            'total' => [
-                'type'  => 'varchar',
-                'constraint'  => '10',
+            'type_kamar' => [
+                'type'      => 'INT',
+                'constarint'=> 11,
+                'unsigned'  => true,
             ],
-            'status'=> [
-                'type' => 'varchar',
-                'constraint' => 20,
-
+            'status'    =>[
+                'type'      => 'INT',
+                'constarint'=> 11,
+                'unsigned'  => true,
             ],
-            'id_pemesanan'=> [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-
+            'harga'    =>[
+                'type'      => 'INT',
+                'constarint'=> 11,
+                'unsigned'  => true,
             ],
             'created_at' => [
                 'type'  => 'DATETIME',
@@ -49,12 +49,13 @@ class CreateTransaksiTabel extends Migration
         ]);
 
         $this->forge->addKey('id',true,true);
-        $this->forge->addForeignKey('id_pemesanan','pemesanan','id');
-        $this->forge->createTable('transaksi');
+        $this->forge->addForeignKey('type_kamar','jeniskamar','id');
+        $this->forge->addForeignKey('status','statuskamar','id');
+        $this->forge->createTable('kamar');
     }
 
     public function down()
     {
-        $this->forge->dropTable('transaksi',true);
+        $this->forge->dropTable('kamar',true);
     }
 }

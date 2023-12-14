@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class JenisKamar extends Migration
+class Transaksi extends Migration
 {
     public function up()
     {
@@ -15,9 +15,24 @@ class JenisKamar extends Migration
                 'unsigned'  => true,
                 'auto_increment'    =>true,
             ],
-            'type_kamar'    =>[
+            'tanggal'    =>[
                 'type'      => 'VARCHAR',
                 'constraint'=> '220',
+            ],
+            'total' => [
+                'type'  => 'varchar',
+                'constraint'  => '10',
+            ],
+            'status'=> [
+                'type' => 'varchar',
+                'constraint' => 20,
+
+            ],
+            'id_pemesanan'=> [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+
             ],
             'created_at' => [
                 'type'  => 'DATETIME',
@@ -34,11 +49,12 @@ class JenisKamar extends Migration
         ]);
 
         $this->forge->addKey('id',true,true);
-        $this->forge->createTable('jeniskamar');
+        $this->forge->addForeignKey('id_pemesanan','pemesanan','id');
+        $this->forge->createTable('transaksi');
     }
 
     public function down()
     {
-        $this->forge->dropTable('jeniskamar',true);
+        $this->forge->dropTable('transaksi',true);
     }
 }

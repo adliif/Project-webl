@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreatePemesananTabel extends Migration
+class Pemesanan extends Migration
 {
     public function up()
     {
