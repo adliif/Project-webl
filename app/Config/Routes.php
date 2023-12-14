@@ -9,17 +9,17 @@ use App\Controllers\User;
  */
 
 // Routes User
-$routes->get('/user', 'User::index');
-$routes->get('/contact', 'User::contact');
-$routes->get('/reservasi', 'User::reservasi');
-$routes->get('/transaction', 'User::transaction');
+$routes->get('/user', 'User::index', ['filter' => 'role:user']);
+$routes->get('/contact', 'User::contact', ['filter' => 'role:user']);
+$routes->get('/reservasi', 'User::reservasi', ['filter' => 'role:user']);
+$routes->get('/transaction', 'User::transaction', ['filter' => 'role:user']);
 
-$routes->get('/create', [User::class, 'create']);
-$routes->post('/pemesanan', [User::class, 'store']);
-$routes->put('/user/(:any)', [User::class, 'update']);
-$routes->get('/user/(:any)/edit', [User::class, 'edit']);
-$routes->delete('/user/(:any)', [User::class, 'destroy']);
-$routes->match(['get', 'post'], 'sendEmail', 'User::sendEmail');
+$routes->get('/create', [User::class, 'create'], ['filter' => 'role:user']);
+$routes->post('/pemesanan', [User::class, 'store'], ['filter' => 'role:user']);
+$routes->put('/user/(:any)', [User::class, 'update'], ['filter' => 'role:user']);
+$routes->get('/user/(:any)/edit', [User::class, 'edit'], ['filter' => 'role:user']);
+$routes->delete('/user/(:any)', [User::class, 'destroy'], ['filter' => 'role:user']);
+$routes->match(['get', 'post'], 'sendEmail', 'User::sendEmail', ['filter' => 'role:user']);
 
 // Routes Owner
 $routes->get('/owner', 'Owner::index', ['filter' => 'role:owner']);
