@@ -131,21 +131,19 @@ https://templatemo.com/tm-591-villa-agency
                     <td><?= $pemesanan['nomor_kamar'] ?></td>
                     <td><?= $pemesanan['harga'] ?></td>
                     <td class="d-flex justify-content-center">
-                        <a href="<?= base_url('user/'.$pemesanan['id'].'/edit') ?>" class="btn btn-warning" style="margin-right: 5px;">Reschedule</a>
-                        <form id="delete-form-<?= $pemesanan['id'] ?>" action="<?= base_url('user/'.$pemesanan['id']) ?>" method="post">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <?= csrf_field() ?>
-                            <button type="button" class="btn btn-danger" onclick="confirmDelete(<?= $pemesanan['id'] ?>)">Refund</button>
-                        </form>
+                        <a href="<?= base_url( $pemesanan['id']) ?>" class="btn btn-warning" style="margin-right: 5px;">Reschedule</a>
+                        <center>
+                          <?php if($pemesanan['aksi'] == 'Refund'){ ?>
+                            <button class="btn btn-primary">process on refund</button>
+                          <?php } ?>
+                          <?php if($pemesanan['aksi'] == '-'){ ?>
+                            <form action="<?= base_url('/refund/'.$pemesanan['id']) ?>" method="POST">
+                                <input type="hidden" name="_method" value="PUT">
+                                <button type="submit" class="btn btn-danger">Refund</button>
+                            </form>
+                          <?php } ?>
+                        </center>
                     </td>
-
-                    <script>
-                        function confirmDelete(userId) {
-                            if (confirm("Are you sure you want to delete this item?")) {
-                                document.getElementById("delete-form-" + userId).submit();
-                            }
-                        }
-                    </script>
                 </tr>
                 <?php
                 }
@@ -157,9 +155,7 @@ https://templatemo.com/tm-591-villa-agency
   <footer>
     <div class="container" style="margin-top: 300px;">
       <div class="col-lg-12">
-        <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
-        
-        Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com">ThemeWagon</a></p>
+        <p>Copyright © 2023 Varilitel Agency Co., Ltd. All rights reserved. 
       </div>
     </div>
   </footer>
