@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency - Property Listing by TemplateMo</title>
+    <title><?= $title ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -122,10 +122,10 @@ https://templatemo.com/tm-591-villa-agency
       <div class="row properties-box">
         <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
           <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-01.jpg" alt=""></a>
+            <a href="#"><img src="assets/images/property-01.jpg" alt=""></a>
             <span class="category">Luxury Villa</span>
             <h6>$2.264.000</h6>
-            <h4><a href="property-details.html">18 Old Street Miami, OR 97219</a></h4>
+            <h4><a href="#">18 Old Street Miami, OR 97219</a></h4>
             <ul>
               <li>Bedrooms: <span>8</span></li>
               <li>Bathrooms: <span>8</span></li>
@@ -134,7 +134,7 @@ https://templatemo.com/tm-591-villa-agency
               <li>Parking: <span>6 spots</span></li>
             </ul>
             <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
+              <a href="/create">Schedule a visit</a>
             </div>
           </div>
         </div>
