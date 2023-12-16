@@ -70,7 +70,7 @@ https://templatemo.com/tm-591-villa-agency
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="<?=base_url('/user')?>" class="logo">
                         <h1>VARILITEL</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -96,7 +96,7 @@ https://templatemo.com/tm-591-villa-agency
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <span class="breadcrumb"><a href="#">Home</a> / Transaction</span>
+          <span class="breadcrumb"><a href="#">Customers</a> / Transaction</span>
           <h3>Transaction</h3>
         </div>
       </div>
@@ -113,11 +113,16 @@ https://templatemo.com/tm-591-villa-agency
                     <th>Chect-out</th>
                     <th>Name</th>
                     <th>Room</th>
-                    <th>Price</th>
+                    <th>Price/Day</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
+              <?php if (empty($users)): ?>
+                  <tr>
+                      <td colspan="8">Data kosong</td>
+                  </tr>
+              <?php else: ?>
                 <?php
                 $no = 1;
                 foreach ($users as $pemesanan){
@@ -130,17 +135,15 @@ https://templatemo.com/tm-591-villa-agency
                     <td><?= $pemesanan['nama'] ?></td>
                     <td><?= $pemesanan['nomor_kamar'] ?></td>
                     <td><?= $pemesanan['harga'] ?></td>
-                    <td class="d-flex justify-content-center">
-                        <a href="<?= base_url( $pemesanan['id']) ?>" class="btn btn-warning" style="margin-right: 5px;">Reschedule</a>
+                    <td class="d-flex justify-content-center">      
                         <center>
                           <?php if($pemesanan['aksi'] == 'Refund'){ ?>
+                            <button class="btn btn-warning">Reschedule</button>
                             <button class="btn btn-primary">process on refund</button>
                           <?php } ?>
                           <?php if($pemesanan['aksi'] == '-'){ ?>
-                            <form action="<?= base_url('/refund/'.$pemesanan['id']) ?>" method="POST">
-                                <input type="hidden" name="_method" value="PUT">
-                                <button type="submit" class="btn btn-danger">Refund</button>
-                            </form>
+                            <a href="<?= base_url('/edit'.$pemesanan['id']) ?>" class="btn btn-warning" style="margin-right: 5px;">Reschedule</a>
+                            <a href="javascript:void(0);" onclick="refundRequest(<?= $pemesanan['id'] ?>)" class="btn btn-danger">Refund</a>    
                           <?php } ?>
                         </center>
                     </td>
@@ -148,6 +151,7 @@ https://templatemo.com/tm-591-villa-agency
                 <?php
                 }
                 ?>
+              <?php endif; ?>
             </tbody>
         </table>
     </div>
@@ -161,6 +165,30 @@ https://templatemo.com/tm-591-villa-agency
   </footer>
 
   <!-- Scripts -->
+  <script>
+    function refundRequest(pemesananId) {
+      // Konstruksi URL untuk permintaan refund
+      var refundUrl = '<?= base_url('/refund/') ?>' + pemesananId;
+
+      // Membuat formulir dinamis untuk permintaan PUT
+      var form = document.createElement('form');
+      form.action = refundUrl;
+      form.method = 'POST';
+
+      // Menambahkan input _method dengan nilai PUT
+      var methodInput = document.createElement('input');
+      methodInput.type = 'hidden';
+      methodInput.name = '_method';
+      methodInput.value = 'PUT';
+      form.appendChild(methodInput);
+
+      // Menambahkan formulir ke dalam body dokumen
+      document.body.appendChild(form);
+
+      // Mengirim formulir
+      form.submit();
+    }
+  </script>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

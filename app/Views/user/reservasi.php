@@ -70,7 +70,7 @@ https://templatemo.com/tm-591-villa-agency
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="<?=base_url('/user')?>" class="logo">
                         <h1>VARILITEL</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -96,7 +96,7 @@ https://templatemo.com/tm-591-villa-agency
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <span class="breadcrumb"><a href="#">Home</a> / Reservasi</span>
+          <span class="breadcrumb"><a href="#">Customers</a> / Reservasi</span>
           <h3>Reservasi</h3>
         </div>
       </div>
@@ -126,7 +126,7 @@ https://templatemo.com/tm-591-villa-agency
             <ul>
               <li>Bedrooms: <span>4</span></li>
               <li>Bathrooms: <span>3</span></li>
-              <li>Area: <span>300m2</span></li>
+              <li>Area: <span>250m2</span></li>
             </ul>
             <div class="main-button">
               <a href="/create">Schedule a visit</a>
