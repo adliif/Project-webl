@@ -42,6 +42,10 @@ class Pemesanan extends Migration
                 'constraint'  => 11,
                 'unsigned' => true,
             ],
+            'aksi'=> [
+                'type'  => 'varchar',
+                'constraint'  => '100',
+            ],
             'created_at' => [
                 'type'  => 'DATETIME',
                 'null'  => true,

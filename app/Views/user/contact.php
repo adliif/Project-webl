@@ -112,7 +112,7 @@ https://templatemo.com/tm-591-villa-agency
             <h6>| Contact Us</h6>
             <h2>Get In Touch With Our Agents</h2>
           </div>
-          <p>When you really need to download free CSS templates, please remember our website TemplateMo. Also, tell your friends about our website. Thank you for visiting. There is a variety of Bootstrap HTML CSS templates on our website. If you need more information, please contact us.</p>
+          <p>Your input means a lot to us in developing this business for the better in the future.</p>
           <div class="row">
             <div class="col-lg-12">
               <div class="item phone">
@@ -169,9 +169,7 @@ https://templatemo.com/tm-591-villa-agency
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
-        
-        Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com">ThemeWagon</a></p>
+        <p>Copyright © 2023 Varilitel Agency Co., Ltd. All rights reserved. 
       </div>
     </div>
   </footer>

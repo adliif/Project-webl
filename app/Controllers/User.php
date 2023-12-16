@@ -108,6 +108,7 @@ class User extends BaseController
             'nama' => $this->request->getVar('nama'),
             'nomor_kamar' => $this->request->getVar('nomor_kamar'),
             'harga' => $this->request->getVar('harga'),
+            'aksi' => '-',
         ]);
         return redirect()->to('/transaction');
     }
@@ -141,6 +142,19 @@ class User extends BaseController
         }
         return redirect()->to(base_url('/transaction'));
     }
+    
+    public function processRefund($id) {
+        $data = [
+            'aksi' => 'Refund',
+        ];
+        $result = $this->pemesananModel->updatePemesanan($data, $id);
+
+        if(!$result){
+            return redirect()->back()->withInput()
+                ->with('error', 'Gagal menyimpan data');
+        }
+        return redirect()->to(base_url('/transaction'));
+    }
 
     public function destroy($id){
         $result = $this->pemesananModel->deletePemesanan($id);
@@ -153,19 +167,20 @@ class User extends BaseController
     }
 
     public function sendEmail(){
-        $to = $this->request->getVar('email');
+        $from = $this->request->getVar('email');
         $subject = $this->request->getVar('subject');
         $message = $this->request->getVar('message');
 
  
         $email = \Config\Services::email();
-        $email->setTo($to);
-        $email->setFrom('adlii.fiqrullah@gmail.com', 'Customer');
+        $email->setTo('adlii.fiqrullah@gmail.com');
+        $email->setFrom($from);
                 
         $email->setSubject($subject);
         $email->setMessage($message);
+
         if ($email->send()) {
-            return redirect()->to(base_url('/contact'))
+            return redirect()->to(base_url('/user'))
                 ->with('success', 'Berhasil mengirim email');
         } else{
             return redirect()->back()->with('error', 'Gagal mengirim email');
