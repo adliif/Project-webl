@@ -1,13 +1,3 @@
-<?php
-$submitted = false;
-$success_message = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {  
-    $success_message = "Berhasil melakukan order, silahkan cek email Anda untuk proses pembayaran. Terima kasih";
-    $submitted = true;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -220,9 +210,3 @@ https://templatemo.com/tm-591-villa-agency
 
   </body>
 </html>
-
-<?php if ($submitted): ?>
-      <div class="alert alert-success" role="alert" style="margin-top: 20px;">
-          <?= $success_message ?>
-      </div>
-  <?php endif; ?>
