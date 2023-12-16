@@ -17,8 +17,9 @@ $routes->get('/transaction', 'User::transaction', ['filter' => 'role:user']);
 $routes->get('/create', [User::class, 'create'], ['filter' => 'role:user']);
 $routes->post('/pemesanan', [User::class, 'store'], ['filter' => 'role:user']);
 $routes->put('/user/(:any)', [User::class, 'update'], ['filter' => 'role:user']);
-$routes->get('(:any)', [User::class, 'edit'], ['filter' => 'role:user']);
+$routes->get('/edit(:any)', [User::class, 'edit'], ['filter' => 'role:user']);
 
+$routes->put('/refund/(:any)', [User::class, 'processRefund'], ['filter' => 'role:user']);
 // $routes->delete('/user/(:any)', [User::class, 'destroy'], ['filter' => 'role:user']);
 $routes->match(['get', 'post'], 'sendEmail', 'User::sendEmail', ['filter' => 'role:user']);
 
