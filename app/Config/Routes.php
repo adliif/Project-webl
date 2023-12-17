@@ -50,11 +50,20 @@ $routes->match(['get', 'post'], '/homestaff/tambah', 'HomeStaff::tambah'); // Us
 $routes->match(['get', 'post'], '/homestaff/update', 'HomeStaff::update'); // Use 'match' for both GET and POST requests
 
 // =======================KAMAR=====================================
-$routes->get('/kamar', 'Kamar::index');
+$routes->get('/kamarstaff', 'Kamar::index');
+$routes->get('/kamartambahstaff', 'Kamar::tambahKamar');
+
+$routes->get('/kamareditstaff/(:num)', 'Kamar::editKamar/$1');
+$routes->post('/updateKamarstaff/(:num)', 'Kamar::updateKamar/$1');
+$routes->match(['get', 'delete'], '/kamarstaff/delete/(:num)', 'Kamar::deleteKamar/$1');
+$routes->post('/createKamar', 'Kamar::createKamar');
+
+// $routes->get('/kamar', 'Owner::kamar');
 $routes->post('/kamar/simpan', 'Kamar::simpan');
 $routes->post('/kamar/hapus/(:segment)', 'Kamar::hapus/$1');
 $routes->get('/kamar/edit/(:segment)', 'Kamar::edit/$1');
 $routes->post('/kamar/update/(:segment)', 'Kamar::update/$1');
+
 
 
 // ==========================DATA PEMESANAN==================================
