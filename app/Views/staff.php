@@ -1,7 +1,18 @@
 <?php echo $this->extend('layout/template') ?>
-
 <?php echo $this->section('content'); ?>
-<div class="container">
+
+<div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- <span class="breadcrumb"><a href="#">Home</a>  /  Staf</span> -->
+          <h3>Data Staf</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container mt-5">
     <div class="row">
         <div class="col-lg-12">
           <div class="wrapper">
@@ -9,8 +20,7 @@
           		<div class="card">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center">
-							<h1>Data Staff Hotel</h1>
-							<button class="btn btn-primary" onclick="tambah()">Tambah</button>
+							<h1>Staf Hotel</h1>
 						</div>
 					</div>
 					<div class="card-body">
@@ -19,10 +29,9 @@
 								<table class="table table-striped" id="table">
 									<tr>
 										<th>No</th>
-										<th>Nama Staff</th>
+										<th>Nama Staf</th>
 										<th>Alamat</th>
 										<th>Telepon</th>
-										<th>Action</th>
 									</tr>
 
 									<?php 
@@ -33,10 +42,6 @@
 											<td><?php echo $value->nama_staf ?></td>
 											<td><?php echo $value->alamat ?></td>
 											<td><?php echo $value->no_telepon ?></td>
-											<td>
-												<a href="<?php echo base_url('homestaff/hapus').'/'.$value->id?>" class="btn btn-danger">Hapus</a>
-												<a href="<?php echo base_url('homestaff/edit').'/'.$value->id?>" class="btn btn-info">Edit</a>
-											</td>
 										</tr>
 									<?php $no++; endforeach ?>
 
@@ -66,7 +71,7 @@
         <div class="row">
         	  <div class="col-md-12">
                    <div class="form-group">
-                                             <label class="">Nama Staff</label>
+                                             <label class="">Nama Staf</label>
                                             <input name="nama_staf" id="nama_staf" placeholder="Masukan Nama Staff" class="form-control" type="text" >
                                             <span class="help-block"></span>
 					</div>
@@ -76,7 +81,7 @@
         <div class="row">
         	  <div class="col-md-12">
                    <div class="form-group">
-                                             <label class="">Alamat Staff</label>
+                                             <label class="">Alamat Staf</label>
                                             <input name="alamat" id="alamat" placeholder="Masukan Alamat Staff" class="form-control" type="text" >
                                             <span class="help-block"></span>
 					</div>
@@ -86,7 +91,7 @@
         <div class="row">
         	  <div class="col-md-12">
                    <div class="form-group">
-                                             <label class="">No Telepon Staff</label>
+                                             <label class="">No Telepon Staf</label>
                                             <input name="no_telepon" id="no_telepon" placeholder="Masukan No Telepon Staff" class="form-control" type="text" >
                                             <span class="help-block"></span>
 					</div>

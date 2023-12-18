@@ -15,7 +15,7 @@ class Owner extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Tampilan owner',
+            'title' => 'Tampilan Owner - Owner',
         ];
         return view('/owner/index', $data);
     }
@@ -24,7 +24,7 @@ class Owner extends BaseController
     {
         $model = new PemesananModel();
         $data = [
-            'title' => 'Tampilan owner',
+            'title' => 'Tampilan Owner - Owner',
             'reservations' => $model->findAll(), // Ambil data pemesanan
         ];
         return view('/owner/pemesanan', $data);

@@ -96,7 +96,7 @@
 
     <footer class="d-flex justify-content-between myfooter text-white">
         <div class="d-flex align-items-center p-4">
-            2023 ReservasiHotel. All rights reserved
+            Copyright © 2023 Varilitel Agency Co., Ltd. All rights reserved
         </div>
         <div class="d-flex align-items-center p-4">
             <div class="me-4">Privacy & Policy</div>

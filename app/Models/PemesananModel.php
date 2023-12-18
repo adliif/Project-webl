@@ -33,7 +33,7 @@ class PemesananModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tanggal_pemesanan','tanggal_masuk','tanggal_keluar','nama','nomor_kamar','harga'];
+    protected $allowedFields    = ['tanggal_pemesanan','tanggal_masuk','tanggal_keluar','nama','nomor_kamar','harga', 'aksi'];
 
     // Dates
     protected $useTimestamps = true;

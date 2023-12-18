@@ -8,7 +8,7 @@ class PemesananModel2 extends Model
 {
     protected $table = 'pemesanan';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga'];
+    protected $allowedFields = ['nomor_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga','aksi'];
 
     public function getData($id = false,$table){
         $this->table = $table;
@@ -21,7 +21,7 @@ class PemesananModel2 extends Model
 
     public function insertData($table, $data)
     {
-    	$this->allowedFields = ['id_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga'];
+    	$this->allowedFields = ['nomor_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga','aksi'];
         $this->table = $table;
         $this->insert($data);
     }
@@ -35,7 +35,7 @@ class PemesananModel2 extends Model
     
     public function UpdateData($table, $data,$where)
     {
-        $this->allowedFields = ['id_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga','status'];
+        $this->allowedFields = ['id','nomor_kamar', 'tanggal_pemesanan', 'tanggal_masuk','tanggal_keluar','harga','aksi'];
         $this->table = $table;
         return $this->where($where)->set($data)->update();
     }

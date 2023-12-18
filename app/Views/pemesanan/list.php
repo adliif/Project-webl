@@ -1,7 +1,18 @@
 <?php echo $this->extend('layout/template') ?>
 <?php echo $this->section('content'); ?>
 
-<div class="container">
+<div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- <span class="breadcrumb"><a href="#">Home</a>  /  Staf</span> -->
+          <h3>Data Pemesanan</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container mt-5">
     <div class="row">
         <div class="col-lg-12">
           <div class="wrapper">
@@ -9,8 +20,8 @@
           		<div class="card">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center">
-							<h1><?php echo $title ?></h1>
-							<button class="btn btn-primary" onclick="tambah()">Tambah</button>
+							<h1>Pemesanan</h1>
+							<!-- <button class="btn btn-primary" onclick="tambah()">Tambah</button> -->
               <?php $tgl = date('Y-m-d'); ?>
 						</div>
 					</div>
@@ -38,47 +49,31 @@
 									$no = 1;
 									foreach ($list as $value): ?>
 										<tr>
-											<td><?php echo $no; ?></td>
-											<td><?php echo $value['cNoKamar'] ?></td>
-											<td><?php echo $value['cNameKamar'] ?></td>
-											<!-- <td><?php echo $value['cFasilitas'] ?></td> -->
+											<td><?php echo $no ?></td>
+											<td><?php echo $value['nomor_kamar'] ?></td>
+											<td><?php echo $value['nama_kamar'] ?></td>
 											<td><?php echo $value['tanggal_pemesanan'] ?></td>
 											<td><?php echo $value['tanggal_masuk'] ?></td>
 											<td><?php echo $value['tanggal_keluar'] ?></td>
-											<td style="font-weight: bold;"><?php echo $value['status'] ?></td>
+											<td style="font-weight: bold;"><?php echo $value['aksi'] ?></td>
 											
 											<td><?php echo number_format($value['harga'],0,',','.') ?></td>
 											
 											<td style="width: 280px">
-                      <?php if($tgl > $value['tanggal_masuk']){ ?>
-                            <?php if ( $value['status']=="Dikonfirmasi"){ ?>
-                          <input class="btn btn-dark" name="" value="Sudah Dikonfirmasi" disabled="">
-                        <?php } else{?>
-                        
-                            <form action="#" id="form_konfirmasi" class="">
-                            <!-- Your form fields here -->
-                            <a onclick="edit_data('<?= $value['id'];?>')" class="btn btn-info">Edit</a>
-                              <a onclick="hapus('<?= $value['id'];?>')" class="btn btn-danger">Hapus</a>
-                            <a class="btn btn-warning">Tidak bisa Dikonfirmasi</a>
-                            <!-- <button type="submit">Update Data</button> -->
-                        </form>
                   
-                            <?php } ?>
-                      <?php } else{ ?>
-												<?php if ( $value['status']=="Dikonfirmasi"){ ?>
+												<?php if ( $value['aksi']=="Dikonfirmasi"){ ?>
 													<input class="btn btn-dark" name="" value="Sudah Dikonfirmasi" disabled="">
 												<?php } else{?>
 												
 		      									<form action="#" id="form_konfirmasi" class="">
 												    <!-- Your form fields here -->
-												    <a onclick="edit_data('<?= $value['id'];?>')" class="btn btn-info">Edit</a>
+												    <!-- <a onclick="edit_data('<?= $value['id'];?>')" class="btn btn-info">Edit</a> -->
 		      										<a onclick="hapus('<?= $value['id'];?>')" class="btn btn-danger">Hapus</a>
 												    <a onclick="acc('<?= $value['id'];?>')" class="btn btn-success">Konfirmasi</a>
 												    <!-- <button type="submit">Update Data</button> -->
 												</form>
 		      				
 		      									<?php } ?>
-                        <?php } ?>
                              
 											</td>
 										</tr>
@@ -121,8 +116,8 @@
 	            <select class="form-control" name="id_kamar" id="id_kamar">
 	            	<option value="">Pilih</option>
 	            	<?php foreach ($list2 as $value): ?>
-                  <?php if ($value['status'] == "Kosong"): ?>
-	            		   <option value="<?php echo $value['id'] ?>"><?php echo $value['cNoKamar'].' - '.$value['cNameKamar']; ?></option>
+                  <?php if ($value->status == "1"): ?>
+	            		   <option value="<?php echo $value->id ?>"><?php echo $value->id.' - '.$value->nama_kamar; ?></option>
                   <?php endif ?>
 	            	<?php endforeach ?>
 	            </select>

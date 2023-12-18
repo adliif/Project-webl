@@ -57,6 +57,7 @@ https://templatemo.com/tm-591-villa-agency
             <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="<?php echo base_url('logout') ?>" style="color: #000;background-color:red" title="Logout"><i class="fab fa-solid fa-power-off" style="color: #fff"></i></a></li>
           </ul>
         </div>
       </div>
@@ -70,7 +71,7 @@ https://templatemo.com/tm-591-villa-agency
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="<?=base_url('/user')?>" class="logo">
                         <h1>VARILITEL</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -96,21 +97,22 @@ https://templatemo.com/tm-591-villa-agency
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <span class="breadcrumb"><a href="#">Home</a> / Reservasi</span>
+          <span class="breadcrumb"><a href="#">Reservasi</a> / Reschedule</span>
           <h3>Reservasi</h3>
         </div>
       </div>
     </div>
-  </div>
+  </div><br><br><br>
 
-    <form class="container" method="post" action="<?=base_url('/user/'. $pemesanan['id'])?>" enctype="multipart/form-data" style="width: 70%;">
+  <center><div class="card-body" style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); width:70%; radius:20px; border-radius: 10px;"><br>
+    <form class="container" method="post" action="<?=base_url('/user/'. $pemesanan['id'])?>" enctype="multipart/form-data" style="width: 80%;">
     <input type="hidden" name="_method" value="PUT">
     <?= csrf_field() ?>
 
         <div class="mb-3 gap-4 mt-5">
-            <input type="text" class="form-control <?=(empty(validation_show_error('tanggal_pemesanan'))) ? '' : 'is-invalid' ?>" name="tanggal_pemesanan" value="<?= $pemesanan['tanggal_pemesanan'] ?>" placeholder="tanggal_pemesanan">
+          <input type="text" class="form-control <?=(empty(validation_show_error('tanggal_pemesanan'))) ? '' : 'is-invalid' ?>" name="tanggal_pemesanan" id="tanggal_pemesanan" placeholder="tanggal_pemesanan" style="pointer-events: none;"/>
             <div class="invalid-feedback">
-                <?= validation_show_error('tanggal_pemesanan') ?>
+              <?= validation_show_error('tanggal_pemesanan') ?>
             </div>
         </div>
         <div class="mb-3 gap-4">
@@ -132,42 +134,74 @@ https://templatemo.com/tm-591-villa-agency
                 <?= validation_show_error('nama') ?>
             </div>
         </div>
-        <div class="mb-3 gap-4">
-            <input type="text" class="form-control <?= (empty(validation_show_error('harga'))) ? '' : 'is-invalid' ?>" name="harga" value="<?= $pemesanan['harga'] ?>" placeholder="harga">
-            <div class="invalid-feedback">
-                <?= validation_show_error('harga') ?>
-            </div>
-        </div>
         <tr>
         <select class="form-select" aria-label="nomor_kamar" <?= (empty(validation_show_error('nomor_kamar'))) ? '' : 'is-invalid' ?> name="nomor_kamar" id="nomor_kamar">
             <option disabled selected>Pilih kamar Anda</option>
             <?php 
                 foreach($kamar as $item):
+                  if($item['status'] == 1) {
             ?>
-            <option value="<?=$item['id']?>" <?= ($item['id'] == old('nomor_kamar')) ? 'selected' : '' ?>>
-                <?=$item['nama_kamar']?>
-            </option>
-            <?php endforeach;?>
+                  <option value="<?=$item['id']?>" <?= ($item['id'] == old('nomor_kamar')) ? 'selected' : '' ?>>
+                      <?=$item['nama_kamar']?>
+                  </option>
+            <?php } endforeach;?>
         </select>
         <div class="invalid-feedback">
             <?= validation_show_error('nomor_kamar'); ?>
         </div>
         </tr>
+        <div class="mb-3 gap-4 mt-3">
+              <input type="text" class="form-control <?= (empty(validation_show_error('harga'))) ? '' : 'is-invalid' ?>" name="harga" value="<?= old('harga') ?>" placeholder="harga kamar/hari">
+              <div class="invalid-feedback">
+                  <?= validation_show_error('total_harga') ?>
+              </div>
+        </div>
                     
         <div class="d-grid gap-2 mx-auto mt-4" style="width: 50%;">
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
+            <button class="btn btn-primary" type="submit">Reschedule</button>
+        </div><br>
     </form>
+  </div></center>
 
    <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
-        
-        Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com">ThemeWagon</a></p>
+        <p>Copyright © 2023 Varilitel Agency Co., Ltd. All rights reserved. 
       </div>
     </div>
   </footer>
+
+  <script>
+    // Set nilai tanggal saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", function() {
+        updateTanggal();
+    });
+
+    // Fungsi untuk memperbarui nilai tanggal
+    function updateTanggal() {
+        var today = new Date();
+        var day = today.getDate();
+        var month = today.getMonth() + 1; // Bulan dimulai dari 0
+        var year = today.getFullYear();
+
+        // Format tanggal sesuai kebutuhan Anda
+        var formattedDate = day + ' ' + getMonthName(month) + ' ' + year;
+
+        // Set nilai input tanggal
+        document.getElementById('tanggal_pemesanan').value = formattedDate;
+    }
+
+    // Fungsi untuk mendapatkan nama bulan dari angka bulan
+    function getMonthName(month) {
+        var monthNames = [
+            "Januari", "Februari", "Maret",
+            "April", "Mei", "Juni", "Juli",
+            "Agustus", "September", "Oktober",
+            "November", "Desember"
+        ];
+        return monthNames[month - 1];
+    }
+  </script>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
