@@ -145,7 +145,7 @@ class User extends BaseController
     
     public function processRefund($id) {
         $data = [
-            'aksi' => 'Refund',
+            'aksi' => 'Dikonfirmasi',
         ];
         $result = $this->pemesananModel->updatePemesanan($data, $id);
 

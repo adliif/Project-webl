@@ -19,7 +19,7 @@ class Kamar extends BaseController
         $list_data = $this->kamarModel->findAll();
         // dd($list_data);
 
-        $data["title"] = "Data Kamar Hotel";
+        $data["title"] = "Data Kamar - Staf";
         $data['list'] = $list_data;
          return view('kamar/list',$data);
     }
@@ -27,7 +27,7 @@ class Kamar extends BaseController
     {
         $kamarModel = new KamarModel();
         $data = [
-            'title' => 'Tampilan kamar',
+            'title' => 'Data Kamar - Staf',
             'kamar' => $kamarModel->findAllWithTypeNameAndStatus(),
         ];
 

@@ -193,7 +193,7 @@ https://templatemo.com/tm-591-villa-agency
       </div>
     </div>
   </div>
-
+  
     </br>
   <div class="container">
                 </br>
@@ -232,7 +232,7 @@ https://templatemo.com/tm-591-villa-agency
 </div>
 
 
-  <div class="contact section">
+<div class="contact section">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 offset-lg-4">
@@ -262,10 +262,8 @@ https://templatemo.com/tm-591-villa-agency
 
   <footer>
     <div class="container">
-      <div class="col-lg-8">
-        <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
-        
-        Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com">ThemeWagon</a></p>
+      <div class="col-lg-12">
+        <p>Copyright © 2023 Varilitel Agency Co., Ltd. All rights reserved. 
       </div>
     </div>
   </footer>

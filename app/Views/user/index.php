@@ -58,6 +58,7 @@ https://templatemo.com/tm-591-villa-agency
             <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="<?php echo base_url('logout') ?>" style="color: #000;background-color:red" title="Logout"><i class="fab fa-solid fa-power-off" style="color: #fff"></i></a></li>
           </ul>
         </div>
       </div>

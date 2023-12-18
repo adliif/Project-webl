@@ -1,7 +1,18 @@
 <?php echo $this->extend('layout/template') ?>
 <?php echo $this->section('content'); ?>
 
-<div class="container">
+<div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- <span class="breadcrumb"><a href="#">Home</a>  /  Staf</span> -->
+          <h3>Data Pemesanan</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container mt-5">
     <div class="row">
         <div class="col-lg-12">
           <div class="wrapper">
@@ -9,7 +20,7 @@
           		<div class="card">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center">
-							<h1><?php echo $title ?></h1>
+							<h1>Pemesanan</h1>
 							<!-- <button class="btn btn-primary" onclick="tambah()">Tambah</button> -->
               <?php $tgl = date('Y-m-d'); ?>
 						</div>
@@ -38,7 +49,7 @@
 									$no = 1;
 									foreach ($list as $value): ?>
 										<tr>
-											<td><?php echo $no; ?></td>
+											<td><?php echo $no ?></td>
 											<td><?php echo $value['nomor_kamar'] ?></td>
 											<td><?php echo $value['nama_kamar'] ?></td>
 											<td><?php echo $value['tanggal_pemesanan'] ?></td>

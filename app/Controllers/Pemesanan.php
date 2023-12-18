@@ -18,7 +18,7 @@ class Pemesanan extends BaseController
         // $list_kamar = $this->kamarModel->findAll();
         $list_data = $this->pemesananModel->getData($id = false,"v_pemesanan");
         // dd($list_kamar);
-        $data["title"] = "Data Pemesanan Hotel";
+        $data["title"] = "Data Pemesanan - Staf";
         $data['list'] = $list_data;
         // $data['list2'] = $list_kamar;
         $db = db_connect();

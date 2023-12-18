@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Hotel reservation - Real Estate</title>
+    <title>Staf - Owner</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -58,6 +58,7 @@ https://templatemo.com/tm-591-villa-agency
             <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="<?php echo base_url('logout') ?>" style="color: #000;background-color:red" title="Logout"><i class="fab fa-solid fa-power-off" style="color: #fff"></i></a></li>
           </ul>
         </div>
       </div>
@@ -72,18 +73,16 @@ https://templatemo.com/tm-591-villa-agency
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <h1>Staf</h1>
+                        <h1>VARILITEL</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                       <li><a href="<?= base_url('owner') ?>">Home</a></li>
-                      <li><a href="<?= base_url('pemesanan') ?>">Pemesanan</a></li>
-                      <li><a href="<?= base_url('transaksi') ?>">Transaksi</a></li>
-                      <li><a href="<?= base_url('staf') ?>">Staf</a></li>
+                      <li><a href="<?= base_url('staf') ?>" class="active">Staf</a></li>
                       <li><a href="<?= base_url('kamar') ?>">Kamar</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                  </ul>    
+                      <li><a href="<?= base_url('pemesanan') ?>"><i class="fa fa-calendar"></i> Pemesanan</a></li>
+                    </ul>    
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -153,11 +152,9 @@ https://templatemo.com/tm-591-villa-agency
 </div>
 
   <footer>
-    <div class="container">
+    <div class="container mt-5">
       <div class="col-lg-12">
-        <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
-        
-        Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com">ThemeWagon</a></p>
+        <p>Copyright © 2023 Varilitel Agency Co., Ltd. All rights reserved. 
       </div>
     </div>
   </footer>

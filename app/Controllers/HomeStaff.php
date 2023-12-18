@@ -14,7 +14,7 @@ class HomeStaff extends BaseController
     public function home(): string
     {
         $db = db_connect();
-        $data['title'] = "Halaman Utama";
+        $data['title'] = "Home - Staf";
         $query   = $db->query("SELECT * FROM grafik");
         // dd($query->getResult());
         $data['grafik_pemesanan'] = $query->getResult();
@@ -26,7 +26,7 @@ class HomeStaff extends BaseController
     public function staff(): string
     {
         $db = db_connect();
-        $data['title'] = "Data Staff";
+        $data['title'] = "Data Staf - Staf";
         $query   = $db->query('SELECT * FROM staf');
         $data['list'] = $query->getResult();
 
@@ -38,7 +38,7 @@ class HomeStaff extends BaseController
     public function edit($id): string
     {
         $db = db_connect();
-        $data['title'] = "Data Staff";
+        $data['title'] = "Data Staf - Staf";
         $query   = $db->query("SELECT * FROM staf WHERE id = '$id' ");
         $data['list'] = $query->getResult();
 
